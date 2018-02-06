@@ -1,0 +1,306 @@
+@import "fonts"
+@import "libs"
+@import "vars"
+
+*
+	-webkit-box-sizing: border-box
+	-moz-box-sizing: border-box
+	box-sizing: border-box
+	&:before, &:after
+		-webkit-box-sizing: border-box
+		-moz-box-sizing: border-box
+		box-sizing: border-box
+
+*::-webkit-input-placeholder
+	color: #666
+	opacity: 1
+
+*:-moz-placeholder
+	color: #666
+	opacity: 1
+
+*::-moz-placeholder
+	color: #666
+	opacity: 1
+
+*:-ms-input-placeholder
+	color: #666
+	opacity: 1
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid
+	color: #666
+body input:required:valid,
+body textarea:required:valid
+	color: #666
+
+html, body
+	height: 100%
+	background-color: $gray
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.75
+	font-family: $default-font
+	overflow-x: hidden
+	opacity: 1
+	&.ishome
+		.site-header
+			max-width: 1360px
+			height: 100vh
+	section, header
+		position: relative
+		background-size: cover
+		background-position: center		
+.top-line
+	padding-bottom: 5px
+	background-color: rgba($turquoise, 0.7)
+	background-image: none
+	position: fixed
+	width: 100%
+	z-index: 5
+	-moz-text-size-adjust: none
+	text-align: center
+	
+.top-line
+	a
+		color: #000
+		font-weight: 600
+.top-line 
+	li
+.top-line 
+	ul
+	list-style-type: none
+	padding: 0
+	margin: 0
+.top-line .sf-menu
+	margin: 0 auto -5px
+	float: none
+	display: inline-block
+	font-family: $default-font,sans-serif
+	text-transform: uppercase
+	font-size: 15px
+	background-color: rgba($turquoise, 0.5)
+.top-line .sf-menu 
+	a
+		border-bottom: $turquoise 1px solid
+		border-left: transparent
+		border-top: none
+.top-line .sf-menu>li
+	background-color: transparent
+.top-line .sf-menu>li>
+	color: #262626
+	border: none
+	padding: 25px 30px 25px
+.top-line .sf-menu>li:hover
+	background-color: rgba($turquoise, 0.6)
+.top-line .sf-menu>li:hover>a
+	color: #262626
+.top-line .sf-menu>li ul li
+	background-color: rgba($turquoise, 0.5)
+	text-align: left
+.top-line .sf-menu>li ul li:hover>a
+	color: #262626
+.top-line .sf-menu>li ul li a
+	padding: 7px 15px
+	color: #000
+.sf-menu li.active a
+	background-color: #1c8796
+.fa-home::before
+	content: '\f015'
+	font-family: fontawesome
+	font-size: 17px
+	margin-right: 5px
+	text-decoration: none
+.fa-paw::before
+	content: '\f1b0'
+	font-family: fontawesome
+	font-size: 17px
+	margin-right: 5px
+	text-decoration: none
+.fa-caret-down::before
+	content: '\f0d7'
+	font-family: fontawesome
+	font-size: 17px
+	margin-left: 5px
+	text-decoration: none
+.fa-cart-plus::before
+	content: '\f217'
+	font-family: fontawesome
+	font-size: 19px
+	margin-right: 5px
+	text-decoration: none
+.fa-comments::before
+	content: '\f086'
+	font-family: fontawesome
+	font-size: 17px
+	margin-right: 5px
+	text-decoration: none
+.fa-university::before
+	content: '\f19c'
+	font-family: fontawesome
+	font-size: 17px
+	margin-right: 5px
+	text-decoration: none
+.fa-search::before
+	content: '\f002'
+	font-family: fontawesome
+	font-size: 17px
+	margin-right: 5px
+	text-decoration: none
+.fa-volume-control-phone::before
+	content: '\f2a0'
+	font-family: fontawesome
+	font-size: 23px
+	margin-right: 5px
+	text-decoration: none
+
+.button
+	box-shadow: 0 0 10px rgba(0,0,0,0.5)
+	display: inline-block
+	border: none
+	color: #000
+	text-decoration: none
+	background-color: $turquoise
+	padding: 15px 10px 15px
+	font-size: 13px
+	text-transform: uppercase
+	font-weight: 600
+	letter-spacing: 1px
+	border-radius: 7px
+	text-align: center
+	position: relative
+	outline: none
+	transition: background-color .1s ease
+	cursor: pointer
+	&::after
+		transition: background-color .2s ease
+		position: absolute
+		content: ''
+		height: 4px
+		bottom: 0
+		width: 100%
+		background-color: darken(#000, 50%)
+		opacity: .18
+		border-bottom-left-radius: 2px
+		border-bottom-right-radius: 2px
+		left: 0
+	&:focus, &:hover
+		text-decoration: none
+		color: #000
+	&:hover
+		background-color: lighten($accent, 5%)
+		color: #000
+		&::after
+			opacity: .22
+	&:active
+		background-color: darken($turquoise, 5%)
+		&::after
+			opacity: .32
+
+.header-flex
+	display: flex
+	height: 100%
+	position: relative
+	top: 0
+.flex-center
+	margin: auto
+.header-composition
+	text-align: center
+	position: relative
+	p
+		margin-top: 80px
+	.button
+		margin-top: 70px
+.tagline
+	padding: 10px 0 10px 0
+	p	
+		color: $turquoise
+		text-transform: uppercase
+		font-size: 16px
+		text-shadow: 2px 1px 0 $dark		
+		display: flex
+		align-items: center
+		white-space: nowrap
+		margin: 0
+		padding: 0 0 10px 0
+		span
+			margin: 0 40px
+		&::before, &::after
+			content: ''
+			height: 2px
+			width: 100%
+			position: relative
+			background-color: $turquoise
+	.h1
+		color: $accent
+		text-transform: uppercase
+		font-weight: 300
+		font-size: 36px
+		text-shadow: 1px 0 1px $dark
+		margin: 0
+		align-items: center
+		line-height: 1.6
+		border-bottom: 2px solid $turquoise
+		white-space: nowrap	
+		margin-bottom: 35px
+.silhouette-of-animals
+	position: absolute
+	display: flex
+	right: 40px
+	height: 100%
+	top: 0
+.small-animals
+	margin: auto
+	ul, li
+		margin: 0
+		padding: 0
+		list-style-type: none
+		position: relative
+.photo-animals
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    background-color: rgba(0,0,0, .5)
+    color: #fff
+    padding-top: 18px
+    font-size: 12px
+    text-align: center
+    opacity: 0
+    transform: scale(0)
+    -webkit-transition: all .25s
+    -o-transition: all .25s
+    transition: all .25s 
+.small-animals li:hover .photo-animals
+	opacity: 1
+	transform: scale(1)
+.small-animals
+	img
+		width: 65px
+		height: 65px
+		margin: 4px 0
+.photo-animals
+	font-size: 14px
+.footer-center
+	text-align: center
+	color: #000
+.footer-about
+	color: #000
+	font-size: 15px
+	text-align: center
+	span
+		color: $turquoise
+		font-size: 15px
+.top-button
+	margin: 20px
+.footer-author
+	color: #000
+	font-size: 11px
+	text-align: center
+
+@import "media" // Всегда в конце
+

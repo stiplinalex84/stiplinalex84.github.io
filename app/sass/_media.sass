@@ -1,0 +1,246 @@
+@import "vars"
+
+/*==========  Desktop First  ==========*/
+@media screen and (min-width: 769px)
+	html body.ishome div#my-page.mm-page.mm-slideout div#my-header header.site-header a.hamburger.hamburger--emphatic
+		display: none
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px)
+	.top-line .sf-menu
+		margin: 0 auto -5px
+		float: none
+		display: inline-block
+		font-family: $default-font,sans-serif
+		text-transform: uppercase
+		font-size: 13px
+		background-color: rgba($turquoise, 0.5)
+
+	.tagline
+		.h1
+			font-size: 29px
+		p
+			font-size: 14px
+			padding: 0 0 10px 0
+	.button
+		padding: 14px 14px
+		font-size: 12px
+	.silhouette-of-animals
+		position: absolute
+		display: flex
+		right: 20px
+		height: 100%
+		top: 0
+	.small-animals
+		img
+			width: 60px
+			height: 60px
+			margin: 4px 0
+	.photo-animals
+		font-size: 13px
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px)
+	.top-line .sf-menu
+		margin: 0 auto -5px
+		float: none
+		display: inline-block
+		font-family: $default-font,sans-serif
+		text-transform: uppercase
+		font-size: 10px
+		background-color: rgba($turquoise, 0.5)
+	.fa-home::before
+		font-size: 10px
+	.fa-paw::before
+		font-size: 10px
+	.fa-caret-down::before
+		font-size: 10px
+	.fa-cart-plus::before
+		font-size: 10px
+	.fa-comments::before
+		font-size: 10px
+	.fa-university::before
+		font-size: 10px
+	.fa-search::before
+		font-size: 10px	
+	.fa-volume-control-phone::before
+		font-size: 14px
+	.tagline
+		.h1
+			font-size: 22px
+		p
+			font-size: 11px
+	.button
+		padding: 11px 11px
+		font-size: 10px
+	.small-animals
+		img
+			width: 55px
+			height: 55px
+			margin: 5px 0
+	.photo-animals
+		font-size: 13px
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px)
+	.tagline
+		.h1
+			font-size: 17px
+		p
+			display: none
+	.button
+		padding: 11px 11px
+		font-size: 10px
+
+
+	.top-line
+		display: none
+	.small-animals
+		img
+			width: 50px
+			height: 50px
+			margin: 7px 0
+	.photo-animals
+		font-size: 11px
+	.hamburger-box
+		width: 35px
+	.hamburger-inner, .hamburger-inner::after, .hamburger-inner::before
+		border-radius: 0
+		width: 35px
+		height: 4px
+		background-color: #000
+	.mm-navbar
+		height: 40px;
+		border-bottom: none
+	
+	.hamburger
+		padding-bottom: 5px
+		background-color: rgba($turquoise, 0.5)
+		background-image: none
+		position: fixed
+		width: 100%
+		z-index: 5
+		-moz-text-size-adjust: none
+	html.mm-opened
+		overflow-y: scroll
+	.mm-panels> .mm-panel.mm-hasnavbar
+		right: -18px
+	.mm-listview>li:not(.mm-divider):after
+		display: none
+	.mm-menu.mm-theme-black .mm-listview > li.mm-selected > a:not(.mm-next), .mm-menu.mm-theme-black .mm-listview > li.mm-selected > span
+		 background-color: transparent
+		 color: $accent
+	.mm-menu.mm-theme-black
+		 color: #000
+	.mm-panels>.mm-panel:after, .mm-panels>.mm-panel:before
+		height: 0
+	.mm-panels>.mm-panel>.mm-listview:first-child, .mm-panels>.mm-panel>.mm-navbar+.mm-listview
+		margin-top: 0
+	.mm-listview 
+		> li
+			> a
+				transition: color .25s ease
+				
+			&:hover
+				color: $dark
+	.mm-listview li
+		color: #fff
+		text-transform: uppercase
+		font-size: 12px
+		line-height: 10px
+				
+	html.mm-opened.mm-blocking.mm-background.mm-right.mm-opening 
+	body.ishome
+	nav#my-menu.mm-menu.mm-offcanvas.mm-right.mm-theme-black.mm-effect-menu-slide.mm-pagedim-black.mm-opened 
+	div.mm-panels div#mm-0.mm-panel.mm-hasnavbar.mm-opened
+		padding-top: 40px
+		background-color: #1d7986
+		
+	html.mm-opened.mm-blocking.mm-background.mm-opening
+	body.ishome
+	nav#my-menu.mm-menu.mm-offcanvas.mm-effect-slide-menu.mm-shadow-page.mm-shadow-panels.mm-opened
+		padding-top: 30px
+		background-color: #1d7986
+	html.mm-opened.mm-blocking.mm-background.mm-opening
+	body.ishome 
+	nav#my-menu.mm-menu.mm-offcanvas.mm-effect-slide-menu.mm-shadow-page.mm-shadow-panels.mm-opened 
+	div.mm-panels div#mm-0.mm-panel.mm-hasnavbar.mm-opened div.mm-navbar a.mm-title	
+		color: #fff
+		font-size: 15px
+		text-transform: uppercase
+	html.mm-opened.mm-blocking.mm-background.mm-opening 
+	body.ishome 
+	nav#my-menu.mm-menu.mm-offcanvas.mm-effect-slide-menu.mm-shadow-page.mm-shadow-panels.mm-opened
+	div.mm-panels div#mm-1.mm-panel.mm-hasnavbar.mm-opened div.mm-navbar a.mm-title
+		color: #fff
+		font-size: 15px
+		text-transform: uppercase
+	html.mm-opened.mm-blocking.mm-background.mm-opening 
+	body.ishome nav#my-menu.mm-menu.mm-offcanvas.mm-effect-slide-menu.mm-shadow-page.mm-shadow-panels.mm-opened 
+	div.mm-panels div#mm-2.mm-panel.mm-hasnavbar.mm-opened div.mm-navbar a.mm-title
+		color: #fff
+		font-size: 15px
+		text-transform: uppercase
+	
+
+	
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px)
+	.tagline
+		.h1
+			font-size: 14px
+		
+	.button
+		padding: 11px 11px
+		font-size: 9px
+	.small-animals
+		img
+			width: 40px
+			height: 40px
+			margin: 10px 0
+	.photo-animals
+		font-size: 9px
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 320px)
+	/**/
+	.tagline
+		.h1
+			font-size: 17px
+		p
+			font-size: 11px
+
+	.button
+		padding: 11px 11px
+		font-size: 9px
+	.small-animals
+		img
+			width: 32px
+			height: 32px
+			margin: 10px 0
+	.photo-animals
+		font-size: 8px
+
+	    
+/*==========  Mobile First  ==========*/
+
+/* Custom, iPhone Retina */
+@media only screen and (min-width : 320px)
+	/**/
+
+
+/* Extra Small Devices, Phones */
+@media only screen and (min-width : 480px)
+	/**/
+
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px)
+	/**/
+
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px)
+	/**/
+
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px)
+	/**/
+

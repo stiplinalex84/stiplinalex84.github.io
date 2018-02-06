@@ -1,0 +1,2897 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+	<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title>ZooForum</title>
+		<link rel="shortcut icon" href='http://zooforum.ru/favicon.ico' />
+		<script type='text/javascript'>
+			jsDebug = 0; /* Must come before JS includes */
+			USE_RTE = 0;
+			inACP   = false;
+		</script>
+		
+	
+				
+	
+
+				
+	
+
+				
+			<link rel="stylesheet" type="text/css" media="print" href="http://zooforum.ru/public/style_css/css_1/ipb_print.css" />
+		
+	
+
+				
+	
+	
+		<link rel="stylesheet" type="text/css" media='screen' href="http://zooforum.ru/public/min/index.php?f=public/style_css/css_1/calendar_select.css,public/style_css/css_1/ipb_editor.css,public/style_css/css_1/ipb_styles.css" />
+	
+
+<!--[if lte IE 7]>
+	<link rel="stylesheet" type="text/css" title='Main' media="screen" href="http://zooforum.ru/public/style_css/css_1/ipb_ie.css" />
+<![endif]-->
+		<!--<meta http-equiv="X-UA-Compatible" content="IE=7" />-->
+		
+	
+	<meta name="identifier-url" content="http://zooforum.ru/index.php?act=idx" />
+	
+
+		<script type='text/javascript' src='http://zooforum.ru/public/min/index.php?g=js'></script>
+	
+	<script type='text/javascript' src='http://zooforum.ru/public/min/index.php?charset=utf-8&amp;f=public/js/ipb.js,public/js/ips.quickpm.js,public/js/ips.hooks.js,public/js/ips.board.js,cache/lang_cache/1/ipb.lang.js' charset='utf-8'></script>
+	
+
+<script type='text/javascript'>
+	var isRTL	= false;
+	var rtlIe	= '';
+	var rtlFull	= '';
+</script>
+
+		
+		<script type='text/javascript'>
+	//<![CDATA[
+		/* ---- URLs ---- */
+		ipb.vars['base_url'] 			= 'http://zooforum.ru/index.php?';
+		ipb.vars['board_url']			= 'http://zooforum.ru';
+		ipb.vars['loading_img'] 		= 'http://zooforum.ru/public/style_images/master/loading.gif';
+		ipb.vars['active_app']			= 'forums';
+		ipb.vars['upload_url']			= 'http://zooforum.ru/uploads/';
+		/* ---- Member ---- */
+		ipb.vars['member_id']			= parseInt( 0 ),
+		ipb.vars['is_supmod']			= parseInt( 0 ),
+		ipb.vars['is_admin']			= parseInt( 0 ),
+		ipb.vars['secure_hash'] 		= '880ea6a14ea49e853634fbdc5015a024';
+		ipb.vars['session_id']			= '89d9f93ad74a0cdfd0e333e4f6aed030';
+		ipb.vars['can_befriend']		= true;
+		/* ---- cookies ----- */
+		ipb.vars['cookie_id'] 			= '';
+		ipb.vars['cookie_domain'] 		= '';
+		ipb.vars['cookie_path']			= '/';
+		/* ---- Rate imgs ---- */
+		ipb.vars['rate_img_on']			= 'http://zooforum.ru/public/style_images/master/bullet_star.png';
+		ipb.vars['rate_img_off']		= 'http://zooforum.ru/public/style_images/master/bullet_star_off.png';
+		ipb.vars['rate_img_rated']		= 'http://zooforum.ru/public/style_images/master/bullet_star_rated.png';
+		/* ---- Uploads ---- */
+		ipb.vars['swfupload_swf']		= 'http://zooforum.ru/public/js/3rd_party/swfupload/swfupload.swf';
+		ipb.vars['swfupload_enabled']	= true;
+		ipb.vars['use_swf_upload']		= ( '' == 'flash' ) ? true : false;
+		ipb.vars['swfupload_debug']		= false; /* SKINNOTE: Turn off for production */
+		/* ---- other ---- */
+		ipb.vars['use_live_search'] 	= 0;
+		ipb.vars['live_search_limit'] 	= 4;
+		ipb.vars['highlight_color']		= "#ade57a";
+		ipb.vars['charset']				= "utf-8";
+		ipb.vars['use_rte']				= 1;
+		ipb.vars['image_resize']		= 50;
+		ipb.vars['seo_enabled']			= 0;
+		
+		/* Templates/Language */
+		ipb.templates['ajax_loading'] 	= "<div id='ajax_loading'>" + ipb.lang['loading'] + "</div>";
+		ipb.templates['close_popup']	= "<img src='http://zooforum.ru/public/style_images/master/close_popup.png' alt='x' />";
+		ipb.templates['rss_shell']		= new Template("<ul id='rss_menu'>#{items}</ul>");
+		ipb.templates['rss_item']		= new Template("<li><a href='#{url}' title='#{title}'>#{title}</a></li>");
+		ipb.templates['resized_img']	= new Template("<span>Уменьшено на #{percent}% (#{width} x #{height}) - Нажмите для увеличения</span>");
+		ipb.templates['m_add_friend']	= new Template("<a href='http://zooforum.ru/index.php?app=members&amp;module=profile&amp;section=friends&amp;do=add&amp;member_id=#{id}' title='Добавить в друзья'><img src='http://zooforum.ru/public/style_images/master/user_add.png' alt='Добавить в друзья' /></a>");
+		ipb.templates['m_rem_friend']	= new Template("<a href='http://zooforum.ru/index.php?app=members&amp;module=profile&amp;section=friends&amp;do=remove&amp;member_id=#{id}' title='Удалить из друзей'><img src='http://zooforum.ru/public/style_images/master/user_delete.png' alt='Удалить из друзей' /></a>");
+		ipb.templates['autocomplete_wrap'] = new Template("<ul id='#{id}' class='ipb_autocomplete' style='width: 250px;'></ul>");
+		ipb.templates['autocomplete_item'] = new Template("<li id='#{id}'><img src='#{img}' alt='' width='#{img_w}' height='#{img_h}' />&nbsp;&nbsp;#{itemvalue}</li>");
+		ipb.templates['page_jump']		= new Template("<div id='#{id}_wrap' class='ipbmenu_content'><h3 class='bar'>Перейти к странице</h3><input type='text' class='input_text' id='#{id}_input' size='8' /> <input type='submit' value='ОК' class='input_submit add_folder' id='#{id}_submit' /></div>");
+	//]]>
+	</script>
+		<script type='text/javascript'>
+			Loader.boot();
+		</script>
+	</head>
+	<body id='ipboard_body'>
+		<div id='ipbwrapper'>
+			<h1>ZooForum: ZooForum</h1>
+			<p id='content_jump'><a id='top'></a><a href='#j_content' title='Перейти к содержимому' accesskey='m'>Перейти к содержимому</a></p>
+		
+			
+			<div id='header'>
+				<div id='branding'>
+					
+						<a href='http://zooforum.ru/index.php?' title='Перейти к списку форумов' rel="home" accesskey='1'><img src='http://zooforum.ru/public/style_images/leto2016.gif' alt='Логотип' /></a>
+					
+				</div>
+						
+				
+					<div id='user_navigation' class='not_logged_in'>
+						<a href='http://zooforum.ru/index.php?app=core&amp;module=global&amp;section=login' title='Вход'><img src='http://zooforum.ru/public/style_images/master/key.png' alt='' /> Вход</a>
+						<a href="http://zooforum.ru/index.php?app=core&amp;module=global&amp;section=register" title='Регистрация'><img src='http://zooforum.ru/public/style_images/master/paste_plain.png' alt='' /> Регистрация</a>
+						<a href="http://zooforum.ru/index.php?app=core&amp;module=help" title='Перейти к помощи' rel="help" accesskey='6'><img src='http://zooforum.ru/public/style_images/master/help.png' alt='' /> Помощь</a>
+					</div>
+				
+				
+			
+				<div id='primary_nav'>
+					<div id='search'>
+						<form action="http://zooforum.ru/index.php?app=core&amp;module=search&amp;do=quick_search&amp;search_filter_app[forums]=1" method="post" id='search-box' >
+							<fieldset>
+							
+								<label for='main_search' class='hide'>Поиск</label>
+								<input type='text' id='main_search' name='search_term' class='text_input' size='17' tabindex='6' />
+								<input type='submit' class='submit_input' value='Поиск' />
+								<a href='http://zooforum.ru/index.php?app=core&amp;module=search' title='' accesskey='4' rel="search" id='adv_search'>Расширенный</a>
+							</fieldset>
+						</form>
+					</div>
+					<ul>
+						
+							<li id='nav_home' class='left'><a href='http://zooforum.ru' title='Перейти на сайт' rel="home">Форум о животных</a></li>
+						
+																								<li id='nav_discussion' class='left active'><a href='http://zooforum.ru/index.php?act=idx' title='Перейти к списку форумов'>Обсуждения</a></li><li id='nav_members' class='left '><a href='http://zooforum.ru/index.php?app=members&amp;section=view&amp;module=list' title='Перейти к списку пользователей'>Пользователи</a></li>
+						
+							
+								
+							
+
+								
+							
+
+								
+							
+						
+					</ul>
+				</div>
+				
+			
+				<div id='secondary_nav'>
+					<ul id='breadcrumb' class='left'>
+												<li class='first'><a href='http://zooforum.ru/index.php?act=idx'>ZooForum</a></li>
+							
+											</ul>
+					<ul id='section_links' class='right'>
+						
+						<li><a href='http://zooforum.ru/index.php?app=core&amp;module=search&amp;do=new_posts&amp;search_filter_app[forums]=1' accesskey='2'>Просмотр новых публикаций</a></li>
+						<li><img src='http://zooforum.ru/public/style_images/master/feed.png' alt='RSS поток' id='rss_feed' class='clickable' /></li>
+					</ul>
+				</div>
+			</div>
+			<div id='content' class='clear'>
+				<a id='j_content'></a>
+				
+<script type='text/javascript'>
+//<![CDATA[
+	ipb.global.boardMarkers = ({
+		'f_cat_unread': "<img src='http://zooforum.ru/public/style_images/master/f_cat_read.png' alt='Категория' title='Категория' />",
+		'f_unread': "<img src='http://zooforum.ru/public/style_images/master/f_read.png' alt='Форум' title='Форум' />",
+		'f_pass_unread': "<img src='http://zooforum.ru/public/style_images/master/f_pass_read.png' alt='Форум (защищен паролем)' title='Форум (защищен паролем)' />"
+	});
+	var markerURL = "http://zooforum.ru/index.php?app=forums&module=ajax&section=markasread&secure_hash=880ea6a14ea49e853634fbdc5015a024&i=1&forumid="; // Ajax URL so don't use &amp;
+//]]>
+</script>
+<a href='http://zooforum.ru/index.php?app=forums&amp;module=extras&amp;section=toggle' id='close_sidebar'  class='sidebar_toggle rounded' style='display: none'><img src='http://zooforum.ru/public/style_images/master/sidebar_close.png' alt='Закрыть' /></a>
+	<a href='http://zooforum.ru/index.php?app=forums&amp;module=extras&amp;section=toggle' id='open_sidebar' class='sidebar_toggle rounded' ><img src='http://zooforum.ru/public/style_images/master/sidebar_open.png' alt='Открыть' /></a>
+<h2 class='hide'>Список форумов</h2>
+<div id='board_index' class='clearfix'>
+	<div id='index_stats' class='right clearfix' >
+			<div class='general_box clearfix'>
+		<h3><img src='http://zooforum.ru/public/style_images/master/user_comment.png' alt='Иконка' /> Активные авторы сегодня</h3>
+			
+				<ol id='top_posters' class='block_list clearfix'>
+				
+					<li>
+						<a href='http://zooforum.ru/index.php?showuser=36469' title='Просмотр профиля'><img src='http://zooforum.ru/public/style_images/master/profile/default_thumb.png' width='50' height='50' alt='Фотография' class='photo' /></a><br />
+						<span class='name'><a href='http://zooforum.ru/index.php?showuser=36469' title='Просмотр профиля'>Вениаминыч</a> <a href='http://zooforum.ru/index.php?showuser=36469' class='__user __id36469' title='Просмотр профиля'><img src='http://zooforum.ru/public/style_images/master/user_popup.png' alt='Иконка' /></a> (2)</span>
+					</li>
+				
+
+					<li>
+						<a href='http://zooforum.ru/index.php?showuser=31498' title='Просмотр профиля'><img src='http://zooforum.ru/uploads//profile/photo-31498.jpeg' width='50' height='50' alt='Фотография' class='photo' /></a><br />
+						<span class='name'><a href='http://zooforum.ru/index.php?showuser=31498' title='Просмотр профиля'>муррена</a> <a href='http://zooforum.ru/index.php?showuser=31498' class='__user __id31498' title='Просмотр профиля'><img src='http://zooforum.ru/public/style_images/master/user_popup.png' alt='Иконка' /></a> (2)</span>
+					</li>
+				
+
+					<li>
+						<a href='http://zooforum.ru/index.php?showuser=13364' title='Просмотр профиля'><img src='http://zooforum.ru/uploads//profile/photo-13364.jpg' width='46' height='50' alt='Фотография' class='photo' /></a><br />
+						<span class='name'><a href='http://zooforum.ru/index.php?showuser=13364' title='Просмотр профиля'>altena</a> <a href='http://zooforum.ru/index.php?showuser=13364' class='__user __id13364' title='Просмотр профиля'><img src='http://zooforum.ru/public/style_images/master/user_popup.png' alt='Иконка' /></a> (1)</span>
+					</li>
+				
+			</ol>
+			
+	</div><div class='general_box clearfix'>
+		<h3><img src='http://zooforum.ru/public/style_images/master/comment_new.png' alt='Иконка' /> Последние темы</h3>
+		<ul class='hfeed block_list'>
+			
+								
+				<li class='hentry row1'><a href='http://zooforum.ru/index.php?showtopic=57024' rel='bookmark' title='Просмотр темы'>Кот Отказывается От Еды</a> 
+				автор <address class="author vcard"><a class="url fn" href="http://zooforum.ru/index.php?showuser=36469" title='Просмотр профиля'>Вениаминыч</a> <a href='http://zooforum.ru/index.php?showuser=36469' class='__user __id36469' title='Просмотр профиля'><img src='http://zooforum.ru/public/style_images/master/user_popup.png' alt='Иконка' /></a></address><br />
+				<span class='date'><abbr class="published" title="2018-02-03T15:44:41+00:00">Вчера, 18:44</abbr></span></li>
+				
+
+				<li class='hentry row2 altrow'><a href='http://zooforum.ru/index.php?showtopic=57023' rel='bookmark' title='Просмотр темы'>Как Выкормить Детеныша Ласки</a> 
+				автор <address class="author vcard"><a class="url fn" href="http://zooforum.ru/index.php?showuser=39887" title='Просмотр профиля'>Hayat</a> <a href='http://zooforum.ru/index.php?showuser=39887' class='__user __id39887' title='Просмотр профиля'><img src='http://zooforum.ru/public/style_images/master/user_popup.png' alt='Иконка' /></a></address><br />
+				<span class='date'><abbr class="published" title="2016-10-09T21:21:15+00:00">10 окт 2016 00:21</abbr></span></li>
+				
+
+				<li class='hentry row1'><a href='http://zooforum.ru/index.php?showtopic=57022' rel='bookmark' title='Просмотр темы'>Хроническая Почечная Недостаточность У Кота</a> 
+				автор <address class="author vcard"><a class="url fn" href="http://zooforum.ru/index.php?showuser=45604" title='Просмотр профиля'>Хозяйка Моти</a> <a href='http://zooforum.ru/index.php?showuser=45604' class='__user __id45604' title='Просмотр профиля'><img src='http://zooforum.ru/public/style_images/master/user_popup.png' alt='Иконка' /></a></address><br />
+				<span class='date'><abbr class="published" title="2016-10-09T13:27:46+00:00">09 окт 2016 16:27</abbr></span></li>
+				
+
+				<li class='hentry row2 altrow'><a href='http://zooforum.ru/index.php?showtopic=57021' rel='bookmark' title='Просмотр темы'>Подозревают Фип У Котенка</a> 
+				автор <address class="author vcard"><a class="url fn" href="http://zooforum.ru/index.php?showuser=64507" title='Просмотр профиля'>Voljanka</a> <a href='http://zooforum.ru/index.php?showuser=64507' class='__user __id64507' title='Просмотр профиля'><img src='http://zooforum.ru/public/style_images/master/user_popup.png' alt='Иконка' /></a></address><br />
+				<span class='date'><abbr class="published" title="2016-10-07T16:09:28+00:00">07 окт 2016 19:09</abbr></span></li>
+				
+
+				<li class='hentry row1'><a href='http://zooforum.ru/index.php?showtopic=57019' rel='bookmark' title='Просмотр темы'>Перелом Таза Нерв Позвонка</a> 
+				автор <address class="author vcard"><a class="url fn" href="http://zooforum.ru/index.php?showuser=69136" title='Просмотр профиля'>natalia55</a> <a href='http://zooforum.ru/index.php?showuser=69136' class='__user __id69136' title='Просмотр профиля'><img src='http://zooforum.ru/public/style_images/master/user_popup.png' alt='Иконка' /></a></address><br />
+				<span class='date'><abbr class="published" title="2016-10-06T08:32:23+00:00">06 окт 2016 11:32</abbr></span></li>
+				
+			
+		</ul>
+	</div>		</div>
+	
+	
+	<div id='categories' class=' clearfix'>
+		
+	<!-- CATS AND FORUMS -->
+		
+			<div class='maintitle'>Последние изображения из галереи</div>
+<div id='attach_wrap' class='rounded clearfix'>
+	<ul>
+	
+		<li><a href='http://zooforum.ru/index.php?app=gallery&amp;module=images&amp;section=viewimage&amp;img=2802' title='IMG_3226.JPG'><img src='http://zooforum.ru/uploads/1456286665/tn_gallery_31498_24_10096.jpg' class='galattach' alt='tn_gallery_31498_24_10096.jpg' /></a></li>
+	
+
+		<li><a href='http://zooforum.ru/index.php?app=gallery&amp;module=images&amp;section=viewimage&amp;img=2800' title='IMG_2892.JPG'><img src='http://zooforum.ru/uploads/1456286665/tn_gallery_31498_24_41522.jpg' class='galattach' alt='tn_gallery_31498_24_41522.jpg' /></a></li>
+	
+
+		<li><a href='http://zooforum.ru/index.php?app=gallery&amp;module=images&amp;section=viewimage&amp;img=2799' title='Дашенька'><img src='http://zooforum.ru/uploads/1456286665/tn_gallery_31498_24_63078.jpg' class='galattach' alt='tn_gallery_31498_24_63078.jpg' /></a></li>
+	
+
+		<li><a href='http://zooforum.ru/index.php?app=gallery&amp;module=images&amp;section=viewimage&amp;img=2798' title='Мой Лапчик'><img src='http://zooforum.ru/uploads/1456286665/tn_gallery_31498_24_33581.jpg' class='galattach' alt='tn_gallery_31498_24_33581.jpg' /></a></li>
+	
+
+		<li><a href='http://zooforum.ru/index.php?app=gallery&amp;module=images&amp;section=viewimage&amp;img=2788' title='IMAG0881.jpg'><img src='http://zooforum.ru/uploads/1436091150/tn_gallery_66672_644_625780.jpg' class='galattach' alt='tn_gallery_66672_644_625780.jpg' /></a></li>
+	
+
+		<li><a href='http://zooforum.ru/index.php?app=gallery&amp;module=images&amp;section=viewimage&amp;img=2787' title='IMAG0875.jpg'><img src='http://zooforum.ru/uploads/1436091150/tn_gallery_66672_644_177403.jpg' class='galattach' alt='tn_gallery_66672_644_177403.jpg' /></a></li>
+	
+	</ul>
+</div>
+<br style='clear:both;' />
+				
+										<div class='category_block block_wrap'>
+						<h3 id='category_58' class='maintitle'><a class='toggle right' href='#' title='Свернуть категорию'>Свернуть категорию</a> <a href="http://zooforum.ru/index.php?showforum=58" title='Просмотр категории'>Работа сайта и форума</a></h3>
+						<table class='ipb_table' summary="Форумы в категории 'Работа сайта и форума'">
+							<tr class='header'>
+								<th scope='col' class='col_c_icon'>&nbsp;</th>
+								<th scope='col' class='col_c_forum'>Форум</th>
+								<th scope='col' class='col_c_stats stats'>Статистика</th>
+								<th scope='col' class='col_c_post'>Последнее сообщение</th>
+							</tr>
+							<!-- / CAT HEADER -->
+							
+								<tr class='row1'>
+										<td class='altrow'>
+											<!-- SKINNOTE: this URL is wrong, needs updating -->
+											
+												<a id='forum_img_27' href="http://zooforum.ru/index.php?app=forums&amp;module=forums&amp;section=markasread&amp;marktype=forum&amp;forumid=27&amp;returntoforumid=0&amp;i=1" title="Пометить форум как прочтенный?" class='forum_marker'>
+													<img src='http://zooforum.ru/public/style_images/master/f_unread.png' alt='Не прочитанный форум' title='Отметить прочитанным ' />
+												</a>
+									
+												<script type='text/javascript'>
+													ipb.global.registerMarker( "forum_img_27", "f_unread", markerURL + "27" );
+												</script>
+											
+										</td>
+										<td>
+											<h4><a href="http://zooforum.ru/index.php?showforum=27" title='Перейти к форуму'>Правила форума</a></h4>
+											<p class='desc'>Читать всем<br />
+</p>
+									
+											
+											<!-- Skinnote: Clean up queued stuff -->
+											
+										</td>
+										<td class='altrow stats'>
+											<ul>
+												<li>17 Тем</li>
+												<li>108 Ответов</li>
+											</ul>
+										</td>
+										<td>
+											<ul class='last_post'>
+												<li><a href='http://zooforum.ru/index.php?showtopic=56498&amp;view=getlastpost' title='Просмотр последнего сообщения'><img src='http://zooforum.ru/public/style_images/master/last_post.png' alt='Иконка' title='Просмотр последнего сообщения' /></a> <a href='http://zooforum.ru/index.php?showtopic=56498&amp;view=getlastpost' title='Просмотр последнего сообщения'>27 Февраль 2016 - 10:41</a></li>
+													<li><strong>Тема:</strong> <a href='http://zooforum.ru/index.php?showtopic=56498&amp;view=getnewpost' title='Перейти к первому непрочитанному сообщению: Буду Ставить На Премодерацию За Посты В Чужих Темах Врачебного Раздела'>Буду Ставить На Премодераци...</a></li>
+													<li>
+														<strong>Автор:</strong> 
+														
+																<a href='http://zooforum.ru/index.php?showuser=13364' title='Просмотр профиля'>altena</a> <a href='http://zooforum.ru/index.php?showuser=13364' class='__user __id13364' title='Просмотр профиля'><img src='http://zooforum.ru/public/style_images/master/user_popup.png' alt='Иконка' /></a>
+															
+													</li>
+											</ul>
+										</td>
+									</tr>
+							
+
+								<tr class='row2'>
+										<td class='altrow'>
+											<!-- SKINNOTE: this URL is wrong, needs updating -->
+											
+												<a id='forum_img_116' href="http://zooforum.ru/index.php?app=forums&amp;module=forums&amp;section=markasread&amp;marktype=forum&amp;forumid=116&amp;returntoforumid=0&amp;i=1" title="Пометить форум как прочтенный?" class='forum_marker'>
+													<img src='http://zooforum.ru/public/style_images/master/f_unread.png' alt='Не прочитанный форум' title='Отметить прочитанным ' />
+												</a>
+									
+												<script type='text/javascript'>
+													ipb.global.registerMarker( "forum_img_116", "f_unread", markerURL + "116" );
+												</script>
+											
+										</td>
+										<td>
+											<h4><a href="http://zooforum.ru/index.php?showforum=116" title='Перейти к форуму'>Техническая поддержка</a></h4>
+											<p class='desc'>Вопросы, как работать с форумом.<br />
+Замечания по работе форума<br />
+</p>
+									
+											
+											<!-- Skinnote: Clean up queued stuff -->
+											
+										</td>
+										<td class='altrow stats'>
+											<ul>
+												<li>36 Тем</li>
+												<li>465 Ответов</li>
+											</ul>
+										</td>
+										<td>
+											<ul class='last_post'>
+												<li><a href='http://zooforum.ru/index.php?showtopic=35400&amp;view=getlastpost' title='Просмотр последнего сообщения'><img src='http://zooforum.ru/public/style_images/master/last_post.png' alt='Иконка' title='Просмотр последнего сообщения' /></a> <a href='http://zooforum.ru/index.php?showtopic=35400&amp;view=getlastpost' title='Просмотр последнего сообщения'>Вчера, 22:57</a></li>
+													<li><strong>Тема:</strong> <a href='http://zooforum.ru/index.php?showtopic=35400&amp;view=getnewpost' title='Перейти к первому непрочитанному сообщению: КНИГА ЖАЛОБ и ПРЕДЛОЖЕНИЙ'>КНИГА ЖАЛОБ и ПРЕДЛОЖЕНИЙ</a></li>
+													<li>
+														<strong>Автор:</strong> 
+														
+																<a href='http://zooforum.ru/index.php?showuser=13364' title='Просмотр профиля'>altena</a> <a href='http://zooforum.ru/index.php?showuser=13364' class='__user __id13364' title='Просмотр профиля'><img src='http://zooforum.ru/public/style_images/master/user_popup.png' alt='Иконка' /></a>
+															
+													</li>
+											</ul>
+										</td>
+									</tr>
+							
+
+								<tr class='row1'>
+										<td class='altrow'>
+											<!-- SKINNOTE: this URL is wrong, needs updating -->
+											
+												<a id='forum_img_108' href="http://zooforum.ru/index.php?app=forums&amp;module=forums&amp;section=markasread&amp;marktype=forum&amp;forumid=108&amp;returntoforumid=0&amp;i=1" title="Пометить форум как прочтенный?" class='forum_marker'>
+													<img src='http://zooforum.ru/public/style_images/master/f_unread.png' alt='Не прочитанный форум' title='Отметить прочитанным ' />
+												</a>
+									
+												<script type='text/javascript'>
+													ipb.global.registerMarker( "forum_img_108", "f_unread", markerURL + "108" );
+												</script>
+											
+										</td>
+										<td>
+											<h4><a href="http://zooforum.ru/index.php?showforum=108" title='Перейти к форуму'>Разное</a></h4>
+											<p class='desc'>Важные сообщения от администрации форума</p>
+									
+											
+											<!-- Skinnote: Clean up queued stuff -->
+											
+										</td>
+										<td class='altrow stats'>
+											<ul>
+												<li>31 Тем</li>
+												<li>325 Ответов</li>
+											</ul>
+										</td>
+										<td>
+											<ul class='last_post'>
+												<li><a href='http://zooforum.ru/index.php?showtopic=44464&amp;view=getlastpost' title='Просмотр последнего сообщения'><img src='http://zooforum.ru/public/style_images/master/last_post.png' alt='Иконка' title='Просмотр последнего сообщения' /></a> <a href='http://zooforum.ru/index.php?showtopic=44464&amp;view=getlastpost' title='Просмотр последнего сообщения'>12 Октябрь 2016 - 21:35</a></li>
+													<li><strong>Тема:</strong> <a href='http://zooforum.ru/index.php?showtopic=44464&amp;view=getnewpost' title='Перейти к первому непрочитанному сообщению: С Днем Рождения Админ, Николай&#33;'>С Днем Рождения Админ, Нико...</a></li>
+													<li>
+														<strong>Автор:</strong> 
+														
+																<a href='http://zooforum.ru/index.php?showuser=1' title='Просмотр профиля'>admin</a> <a href='http://zooforum.ru/index.php?showuser=1' class='__user __id1' title='Просмотр профиля'><img src='http://zooforum.ru/public/style_images/master/user_popup.png' alt='Иконка' /></a>
+															
+													</li>
+											</ul>
+										</td>
+									</tr>
+							
+						</table>
+					</div>
+				
+			
+
+				
+										<div class='category_block block_wrap'>
+						<h3 id='category_57' class='maintitle'><a class='toggle right' href='#' title='Свернуть категорию'>Свернуть категорию</a> <a href="http://zooforum.ru/index.php?showforum=57" title='Просмотр категории'>Вопрос ветеринарному врачу</a></h3>
+						<table class='ipb_table' summary="Форумы в категории 'Вопрос ветеринарному врачу'">
+							<tr class='header'>
+								<th scope='col' class='col_c_icon'>&nbsp;</th>
+								<th scope='col' class='col_c_forum'>Форум</th>
+								<th scope='col' class='col_c_stats stats'>Статистика</th>
+								<th scope='col' class='col_c_post'>Последнее сообщение</th>
+							</tr>
+							<!-- / CAT HEADER -->
+							
+								<tr class='row1'>
+										<td class='altrow'>
+											<!-- SKINNOTE: this URL is wrong, needs updating -->
+											
+												<a id='forum_img_117' href="http://zooforum.ru/index.php?app=forums&amp;module=forums&amp;section=markasread&amp;marktype=forum&amp;forumid=117&amp;returntoforumid=0&amp;i=1" title="Пометить форум как прочтенный?" class='forum_marker'>
+													<img src='http://zooforum.ru/public/style_images/master/f_unread.png' alt='Не прочитанный форум' title='Отметить прочитанным ' />
+												</a>
+									
+												<script type='text/javascript'>
+													ipb.global.registerMarker( "forum_img_117", "f_unread", markerURL + "117" );
+												</script>
+											
+										</td>
+										<td>
+											<h4><a href="http://zooforum.ru/index.php?showforum=117" title='Перейти к форуму'>Скорая помощь</a></h4>
+											<p class='desc'>Советы по доврачебной помощи и уходу</p>
+									
+											
+											<!-- Skinnote: Clean up queued stuff -->
+											
+										</td>
+										<td class='altrow stats'>
+											<ul>
+												<li>29 Тем</li>
+												<li>80 Ответов</li>
+											</ul>
+										</td>
+										<td>
+											<ul class='last_post'>
+												<li><a href='http://zooforum.ru/index.php?showtopic=45400&amp;view=getlastpost' title='Просмотр последнего сообщения'><img src='http://zooforum.ru/public/style_images/master/last_post.png' alt='Иконка' title='Просмотр последнего сообщения' /></a> <a href='http://zooforum.ru/index.php?showtopic=45400&amp;view=getlastpost' title='Просмотр последнего сообщения'>12 Февраль 2016 - 14:02</a></li>
+													<li><strong>Тема:</strong> <a href='http://zooforum.ru/index.php?showtopic=45400&amp;view=getnewpost' title='Перейти к первому непрочитанному сообщению: Зачем Нужны Анализы Животных?'>Зачем Нужны Анализы Животных?</a></li>
+													<li>
+														<strong>Автор:</strong> 
+														
+																<a href='http://zooforum.ru/index.php?showuser=16118' title='Просмотр профиля'>Liberty</a> <a href='http://zooforum.ru/index.php?showuser=16118' class='__user __id16118' title='Просмотр профиля'><img src='http://zooforum.ru/public/style_images/master/user_popup.png' alt='Иконка' /></a>
+															
+													</li>
+											</ul>
+										</td>
+									</tr>
+							
+
+								<tr class='row2'>
+										<td class='altrow'>
+											<!-- SKINNOTE: this URL is wrong, needs updating -->
+											
+												<a id='forum_img_22' href="http://zooforum.ru/index.php?app=forums&amp;module=forums&amp;section=markasread&amp;marktype=forum&amp;forumid=22&amp;returntoforumid=0&amp;i=1" title="Пометить форум как прочтенный?" class='forum_marker'>
+													<img src='http://zooforum.ru/public/style_images/master/f_unread.png' alt='Не прочитанный форум' title='Отметить прочитанным ' />
+												</a>
+									
+												<script type='text/javascript'>
+													ipb.global.registerMarker( "forum_img_22", "f_unread", markerURL + "22" );
+												</script>
+											
+										</td>
+										<td>
+											<h4><a href="http://zooforum.ru/index.php?showforum=22" title='Перейти к форуму'>Общие вопросы здоровья</a></h4>
+											<p class='desc'>Органы пищеварения и печень / Неотложные состояния и экстренная помощь/ Прочее</p>
+									
+											
+											<!-- Skinnote: Clean up queued stuff -->
+											
+										</td>
+										<td class='altrow stats'>
+											<ul>
+												<li>7 522 Тем</li>
+												<li>36 438 Ответов</li>
+											</ul>
+										</td>
+										<td>
+											<ul class='last_post'>
+												<li><a href='http://zooforum.ru/index.php?showtopic=57024&amp;view=getlastpost' title='Просмотр последнего сообщения'><img src='http://zooforum.ru/public/style_images/master/last_post.png' alt='Иконка' title='Просмотр последнего сообщения' /></a> <a href='http://zooforum.ru/index.php?showtopic=57024&amp;view=getlastpost' title='Просмотр последнего сообщения'>Сегодня, 16:16</a></li>
+													<li><strong>Тема:</strong> <a href='http://zooforum.ru/index.php?showtopic=57024&amp;view=getnewpost' title='Перейти к первому непрочитанному сообщению: Кот Отказывается От Еды'>Кот Отказывается От Еды</a></li>
+													<li>
+														<strong>Автор:</strong> 
+														
+																<a href='http://zooforum.ru/index.php?showuser=31498' title='Просмотр профиля'>муррена</a> <a href='http://zooforum.ru/index.php?showuser=31498' class='__user __id31498' title='Просмотр профиля'><img src='http://zooforum.ru/public/style_images/master/user_popup.png' alt='Иконка' /></a>
+															
+													</li>
+											</ul>
+										</td>
+									</tr>
+							
+
+								<tr class='row1'>
+										<td class='altrow'>
+											<!-- SKINNOTE: this URL is wrong, needs updating -->
+											
+												<a id='forum_img_20' href="http://zooforum.ru/index.php?app=forums&amp;module=forums&amp;section=markasread&amp;marktype=forum&amp;forumid=20&amp;returntoforumid=0&amp;i=1" title="Пометить форум как прочтенный?" class='forum_marker'>
+													<img src='http://zooforum.ru/public/style_images/master/f_unread.png' alt='Не прочитанный форум' title='Отметить прочитанным ' />
+												</a>
+									
+												<script type='text/javascript'>
+													ipb.global.registerMarker( "forum_img_20", "f_unread", markerURL + "20" );
+												</script>
+											
+										</td>
+										<td>
+											<h4><a href="http://zooforum.ru/index.php?showforum=20" title='Перейти к форуму'>Болезни мочевыводящей системы</a></h4>
+											<p class='desc'>Болезни почек и мочевого пузыря. Цистит. Мочекаменная болезнь и проч.</p>
+									
+											
+											<!-- Skinnote: Clean up queued stuff -->
+											
+										</td>
+										<td class='altrow stats'>
+											<ul>
+												<li>2 730 Тем</li>
+												<li>25 224 Ответов</li>
+											</ul>
+										</td>
+										<td>
+											<ul class='last_post'>
+												<li><a href='http://zooforum.ru/index.php?showtopic=57022&amp;view=getlastpost' title='Просмотр последнего сообщения'><img src='http://zooforum.ru/public/style_images/master/last_post.png' alt='Иконка' title='Просмотр последнего сообщения' /></a> <a href='http://zooforum.ru/index.php?showtopic=57022&amp;view=getlastpost' title='Просмотр последнего сообщения'>09 Октябрь 2016 - 16:27</a></li>
+													<li><strong>Тема:</strong> <a href='http://zooforum.ru/index.php?showtopic=57022&amp;view=getnewpost' title='Перейти к первому непрочитанному сообщению: Хроническая Почечная Недостаточность У Кота'>Хроническая Почечная Недост...</a></li>
+													<li>
+														<strong>Автор:</strong> 
+														
+																<a href='http://zooforum.ru/index.php?showuser=45604' title='Просмотр профиля'>Хозяйка Моти</a> <a href='http://zooforum.ru/index.php?showuser=45604' class='__user __id45604' title='Просмотр профиля'><img src='http://zooforum.ru/public/style_images/master/user_popup.png' alt='Иконка' /></a>
+															
+													</li>
+											</ul>
+										</td>
+									</tr>
+							
+
+								<tr class='row2'>
+										<td class='altrow'>
+											<!-- SKINNOTE: this URL is wrong, needs updating -->
+											
+												<a id='forum_img_17' href="http://zooforum.ru/index.php?app=forums&amp;module=forums&amp;section=markasread&amp;marktype=forum&amp;forumid=17&amp;returntoforumid=0&amp;i=1" title="Пометить форум как прочтенный?" class='forum_marker'>
+													<img src='http://zooforum.ru/public/style_images/master/f_unread.png' alt='Не прочитанный форум' title='Отметить прочитанным ' />
+												</a>
+									
+												<script type='text/javascript'>
+													ipb.global.registerMarker( "forum_img_17", "f_unread", markerURL + "17" );
+												</script>
+											
+										</td>
+										<td>
+											<h4><a href="http://zooforum.ru/index.php?showforum=17" title='Перейти к форуму'>Проблемы кожи и шерсти</a></h4>
+											<p class='desc'>Обсуждаются кожные заболевания, болезни ушей (отиты)</p>
+									
+											
+											<!-- Skinnote: Clean up queued stuff -->
+											
+										</td>
+										<td class='altrow stats'>
+											<ul>
+												<li>3 547 Тем</li>
+												<li>19 358 Ответов</li>
+											</ul>
+										</td>
+										<td>
+											<ul class='last_post'>
+												<li><a href='http://zooforum.ru/index.php?showtopic=56969&amp;view=getlastpost' title='Просмотр последнего сообщения'><img src='http://zooforum.ru/public/style_images/master/last_post.png' alt='Иконка' title='Просмотр последнего сообщения' /></a> <a href='http://zooforum.ru/index.php?showtopic=56969&amp;view=getlastpost' title='Просмотр последнего сообщения'>31 Август 2016 - 20:52</a></li>
+													<li><strong>Тема:</strong> <a href='http://zooforum.ru/index.php?showtopic=56969&amp;view=getnewpost' title='Перейти к первому непрочитанному сообщению: Микроспория У Котенка 3 Мес.'>Микроспория У Котенка 3 Мес.</a></li>
+													<li>
+														<strong>Автор:</strong> 
+														
+																<a href='http://zooforum.ru/index.php?showuser=55351' title='Просмотр профиля'>shinshilla</a> <a href='http://zooforum.ru/index.php?showuser=55351' class='__user __id55351' title='Просмотр профиля'><img src='http://zooforum.ru/public/style_images/master/user_popup.png' alt='Иконка' /></a>
+															
+													</li>
+											</ul>
+										</td>
+									</tr>
+							
+
+								<tr class='row1'>
+										<td class='altrow'>
+											<!-- SKINNOTE: this URL is wrong, needs updating -->
+											
+												<a id='forum_img_19' href="http://zooforum.ru/index.php?app=forums&amp;module=forums&amp;section=markasread&amp;marktype=forum&amp;forumid=19&amp;returntoforumid=0&amp;i=1" title="Пометить форум как прочтенный?" class='forum_marker'>
+													<img src='http://zooforum.ru/public/style_images/master/f_unread.png' alt='Не прочитанный форум' title='Отметить прочитанным ' />
+												</a>
+									
+												<script type='text/javascript'>
+													ipb.global.registerMarker( "forum_img_19", "f_unread", markerURL + "19" );
+												</script>
+											
+										</td>
+										<td>
+											<h4><a href="http://zooforum.ru/index.php?showforum=19" title='Перейти к форуму'>Травматология, болезни костей и суставов</a></h4>
+											<p class='desc'>Раны, укусы, переломы, вывихи, деформации костей, болезни суставов, дисплазия</p>
+									
+											
+											<!-- Skinnote: Clean up queued stuff -->
+											
+										</td>
+										<td class='altrow stats'>
+											<ul>
+												<li>2 693 Тем</li>
+												<li>14 768 Ответов</li>
+											</ul>
+										</td>
+										<td>
+											<ul class='last_post'>
+												<li><a href='http://zooforum.ru/index.php?showtopic=57019&amp;view=getlastpost' title='Просмотр последнего сообщения'><img src='http://zooforum.ru/public/style_images/master/last_post.png' alt='Иконка' title='Просмотр последнего сообщения' /></a> <a href='http://zooforum.ru/index.php?showtopic=57019&amp;view=getlastpost' title='Просмотр последнего сообщения'>11 Октябрь 2016 - 19:04</a></li>
+													<li><strong>Тема:</strong> <a href='http://zooforum.ru/index.php?showtopic=57019&amp;view=getnewpost' title='Перейти к первому непрочитанному сообщению: Перелом Таза Нерв Позвонка'>Перелом Таза Нерв Позвонка</a></li>
+													<li>
+														<strong>Автор:</strong> 
+														
+																<a href='http://zooforum.ru/index.php?showuser=5158' title='Просмотр профиля'>лёха</a> <a href='http://zooforum.ru/index.php?showuser=5158' class='__user __id5158' title='Просмотр профиля'><img src='http://zooforum.ru/public/style_images/master/user_popup.png' alt='Иконка' /></a>
+															
+													</li>
+											</ul>
+										</td>
+									</tr>
+							
+
+								<tr class='row2'>
+										<td class='altrow'>
+											<!-- SKINNOTE: this URL is wrong, needs updating -->
+											
+												<a id='forum_img_26' href="http://zooforum.ru/index.php?app=forums&amp;module=forums&amp;section=markasread&amp;marktype=forum&amp;forumid=26&amp;returntoforumid=0&amp;i=1" title="Пометить форум как прочтенный?" class='forum_marker'>
+													<img src='http://zooforum.ru/public/style_images/master/f_cat_unread.png' alt='Не прочитанная категория' title='Отметить прочитанным ' />
+												</a>
+									
+												<script type='text/javascript'>
+													ipb.global.registerMarker( "forum_img_26", "f_cat_unread", markerURL + "26" );
+												</script>
+											
+										</td>
+										<td>
+											<h4><a href="http://zooforum.ru/index.php?showforum=26" title='Перейти к форуму'>Инфекционные и паразитарные заболевания</a></h4>
+											<p class='desc'>Чума, энтерит, панлейкопения, калицивироз, FIP, аденовироз и другие инфекционные заболевания животных.</p>
+									
+											
+												<h5 class='hide'>Подфорумы:</h5>
+												<ol class='subforums'>
+												
+													<li class='newposts'><a href="http://zooforum.ru/index.php?showforum=111" title='Перейти к форуму'>Паразитология: глисты, блохи, клещи, простейшие.</a></li>
+												
+
+													<li class='newposts'><a href="http://zooforum.ru/index.php?showforum=112" title='Перейти к форуму'>Инфекционные заболевания</a></li>
+												
+												</ol>
+											
+											<!-- Skinnote: Clean up queued stuff -->
+											
+										</td>
+										<td class='altrow stats'>
+											<ul>
+												<li>3 326 Тем</li>
+												<li>26 029 Ответов</li>
+											</ul>
+										</td>
+										<td>
+											<ul class='last_post'>
+												<li><a href='http://zooforum.ru/index.php?showtopic=32865&amp;view=getlastpost' title='Просмотр последнего сообщения'><img src='http://zooforum.ru/public/style_images/master/last_post.png' alt='Иконка' title='Просмотр последнего сообщения' /></a> <a href='http://zooforum.ru/index.php?showtopic=32865&amp;view=getlastpost' title='Просмотр последнего сообщения'>12 Октябрь 2016 - 14:27</a></li>
+													<li><strong>Тема:</strong> <a href='http://zooforum.ru/index.php?showtopic=32865&amp;view=getnewpost' title='Перейти к первому непрочитанному сообщению: Блохи'>Блохи</a></li>
+													<li>
+														<strong>Автор:</strong> 
+														
+																<a href='http://zooforum.ru/index.php?showuser=19933' title='Просмотр профиля'>Скорп</a> <a href='http://zooforum.ru/index.php?showuser=19933' class='__user __id19933' title='Просмотр профиля'><img src='http://zooforum.ru/public/style_images/master/user_popup.png' alt='Иконка' /></a>
+															
+													</li>
+											</ul>
+										</td>
+									</tr>
+							
+
+								<tr class='row1'>
+										<td class='altrow'>
+											<!-- SKINNOTE: this URL is wrong, needs updating -->
+											
+												<a id='forum_img_18' href="http://zooforum.ru/index.php?app=forums&amp;module=forums&amp;section=markasread&amp;marktype=forum&amp;forumid=18&amp;returntoforumid=0&amp;i=1" title="Пометить форум как прочтенный?" class='forum_marker'>
+													<img src='http://zooforum.ru/public/style_images/master/f_cat_unread.png' alt='Не прочитанная категория' title='Отметить прочитанным ' />
+												</a>
+									
+												<script type='text/javascript'>
+													ipb.global.registerMarker( "forum_img_18", "f_cat_unread", markerURL + "18" );
+												</script>
+											
+										</td>
+										<td>
+											<h4><a href="http://zooforum.ru/index.php?showforum=18" title='Перейти к форуму'>Онкология</a></h4>
+											<p class='desc'>Рак, саркома, аденома и другие злокачественные и доброкачественные опухоли у собак, кошек, крыс, попугаев и других животных и птиц. Диагностика, лечение, прогнозы.</p>
+									
+											
+												<h5 class='hide'>Подфорумы:</h5>
+												<ol class='subforums'>
+												
+													<li class='newposts'><a href="http://zooforum.ru/index.php?showforum=104" title='Перейти к форуму'>Онкология: Вопрос врачу</a></li>
+												
+
+													<li class='newposts'><a href="http://zooforum.ru/index.php?showforum=105" title='Перейти к форуму'>Онкология:Вопросы по уходу</a></li>
+												
+												</ol>
+											
+											<!-- Skinnote: Clean up queued stuff -->
+											
+										</td>
+										<td class='altrow stats'>
+											<ul>
+												<li>2 336 Тем</li>
+												<li>21 717 Ответов</li>
+											</ul>
+										</td>
+										<td>
+											<ul class='last_post'>
+												<li><a href='http://zooforum.ru/index.php?showtopic=57014&amp;view=getlastpost' title='Просмотр последнего сообщения'><img src='http://zooforum.ru/public/style_images/master/last_post.png' alt='Иконка' title='Просмотр последнего сообщения' /></a> <a href='http://zooforum.ru/index.php?showtopic=57014&amp;view=getlastpost' title='Просмотр последнего сообщения'>05 Октябрь 2016 - 10:20</a></li>
+													<li><strong>Тема:</strong> <a href='http://zooforum.ru/index.php?showtopic=57014&amp;view=getnewpost' title='Перейти к первому непрочитанному сообщению: �'>�</a></li>
+													<li>
+														<strong>Автор:</strong> 
+														
+																<a href='http://zooforum.ru/index.php?showuser=13364' title='Просмотр профиля'>altena</a> <a href='http://zooforum.ru/index.php?showuser=13364' class='__user __id13364' title='Просмотр профиля'><img src='http://zooforum.ru/public/style_images/master/user_popup.png' alt='Иконка' /></a>
+															
+													</li>
+											</ul>
+										</td>
+									</tr>
+							
+
+								<tr class='row2'>
+										<td class='altrow'>
+											<!-- SKINNOTE: this URL is wrong, needs updating -->
+											
+												<a id='forum_img_30' href="http://zooforum.ru/index.php?app=forums&amp;module=forums&amp;section=markasread&amp;marktype=forum&amp;forumid=30&amp;returntoforumid=0&amp;i=1" title="Пометить форум как прочтенный?" class='forum_marker'>
+													<img src='http://zooforum.ru/public/style_images/master/f_unread.png' alt='Не прочитанный форум' title='Отметить прочитанным ' />
+												</a>
+									
+												<script type='text/javascript'>
+													ipb.global.registerMarker( "forum_img_30", "f_unread", markerURL + "30" );
+												</script>
+											
+										</td>
+										<td>
+											<h4><a href="http://zooforum.ru/index.php?showforum=30" title='Перейти к форуму'>Размножение. Вязки. Беременность. Кастрация, стерилизация</a></h4>
+											<p class='desc'>Патология беременности. Мастит. Роды. Осложнения. Проблемы полового поведения животных. Оптимальные сроки кастрации.</p>
+									
+											
+											<!-- Skinnote: Clean up queued stuff -->
+											
+										</td>
+										<td class='altrow stats'>
+											<ul>
+												<li>1 777 Тем</li>
+												<li>9 015 Ответов</li>
+											</ul>
+										</td>
+										<td>
+											<ul class='last_post'>
+												<li><a href='http://zooforum.ru/index.php?showtopic=51776&amp;view=getlastpost' title='Просмотр последнего сообщения'><img src='http://zooforum.ru/public/style_images/master/last_post.png' alt='Иконка' title='Просмотр последнего сообщения' /></a> <a href='http://zooforum.ru/index.php?showtopic=51776&amp;view=getlastpost' title='Просмотр последнего сообщения'>10 Октябрь 2016 - 08:41</a></li>
+													<li><strong>Тема:</strong> <a href='http://zooforum.ru/index.php?showtopic=51776&amp;view=getnewpost' title='Перейти к первому непрочитанному сообщению: Кастрация Кота'>Кастрация Кота</a></li>
+													<li>
+														<strong>Автор:</strong> 
+														
+																<a href='http://zooforum.ru/index.php?showuser=64873' title='Просмотр профиля'>Кобякова Инна</a> <a href='http://zooforum.ru/index.php?showuser=64873' class='__user __id64873' title='Просмотр профиля'><img src='http://zooforum.ru/public/style_images/master/user_popup.png' alt='Иконка' /></a>
+															
+													</li>
+											</ul>
+										</td>
+									</tr>
+							
+
+								<tr class='row1'>
+										<td class='altrow'>
+											<!-- SKINNOTE: this URL is wrong, needs updating -->
+											
+												<a id='forum_img_21' href="http://zooforum.ru/index.php?app=forums&amp;module=forums&amp;section=markasread&amp;marktype=forum&amp;forumid=21&amp;returntoforumid=0&amp;i=1" title="Пометить форум как прочтенный?" class='forum_marker'>
+													<img src='http://zooforum.ru/public/style_images/master/f_unread.png' alt='Не прочитанный форум' title='Отметить прочитанным ' />
+												</a>
+									
+												<script type='text/javascript'>
+													ipb.global.registerMarker( "forum_img_21", "f_unread", markerURL + "21" );
+												</script>
+											
+										</td>
+										<td>
+											<h4><a href="http://zooforum.ru/index.php?showforum=21" title='Перейти к форуму'>Кормление, диетология</a></h4>
+											<p class='desc'>Обсуждаются вопросы кормления, диетологии, рационы домашнего приготовления и готовые корма (сухие и влажные) различных производителей</p>
+									
+											
+											<!-- Skinnote: Clean up queued stuff -->
+											
+										</td>
+										<td class='altrow stats'>
+											<ul>
+												<li>1 309 Тем</li>
+												<li>10 616 Ответов</li>
+											</ul>
+										</td>
+										<td>
+											<ul class='last_post'>
+												<li><a href='http://zooforum.ru/index.php?showtopic=51745&amp;view=getlastpost' title='Просмотр последнего сообщения'><img src='http://zooforum.ru/public/style_images/master/last_post.png' alt='Иконка' title='Просмотр последнего сообщения' /></a> <a href='http://zooforum.ru/index.php?showtopic=51745&amp;view=getlastpost' title='Просмотр последнего сообщения'>09 Октябрь 2016 - 09:38</a></li>
+													<li><strong>Тема:</strong> <a href='http://zooforum.ru/index.php?showtopic=51745&amp;view=getnewpost' title='Перейти к первому непрочитанному сообщению: Влажный Корм Для Кошек'>Влажный Корм Для Кошек</a></li>
+													<li>
+														<strong>Автор:</strong> 
+														
+																<a href='http://zooforum.ru/index.php?showuser=67110' title='Просмотр профиля'>pantera1387</a> <a href='http://zooforum.ru/index.php?showuser=67110' class='__user __id67110' title='Просмотр профиля'><img src='http://zooforum.ru/public/style_images/master/user_popup.png' alt='Иконка' /></a>
+															
+													</li>
+											</ul>
+										</td>
+									</tr>
+							
+
+								<tr class='row2'>
+										<td class='altrow'>
+											<!-- SKINNOTE: this URL is wrong, needs updating -->
+											
+												<a id='forum_img_24' href="http://zooforum.ru/index.php?app=forums&amp;module=forums&amp;section=markasread&amp;marktype=forum&amp;forumid=24&amp;returntoforumid=0&amp;i=1" title="Пометить форум как прочтенный?" class='forum_marker'>
+													<img src='http://zooforum.ru/public/style_images/master/f_unread.png' alt='Не прочитанный форум' title='Отметить прочитанным ' />
+												</a>
+									
+												<script type='text/javascript'>
+													ipb.global.registerMarker( "forum_img_24", "f_unread", markerURL + "24" );
+												</script>
+											
+										</td>
+										<td>
+											<h4><a href="http://zooforum.ru/index.php?showforum=24" title='Перейти к форуму'>Болезни птиц</a></h4>
+											<p class='desc'>Болезни и лечение пернатых питомцев.<br></p>
+									
+											
+											<!-- Skinnote: Clean up queued stuff -->
+											
+										</td>
+										<td class='altrow stats'>
+											<ul>
+												<li>634 Тем</li>
+												<li>1 795 Ответов</li>
+											</ul>
+										</td>
+										<td>
+											<ul class='last_post'>
+												<li><a href='http://zooforum.ru/index.php?showtopic=56448&amp;view=getlastpost' title='Просмотр последнего сообщения'><img src='http://zooforum.ru/public/style_images/master/last_post.png' alt='Иконка' title='Просмотр последнего сообщения' /></a> <a href='http://zooforum.ru/index.php?showtopic=56448&amp;view=getlastpost' title='Просмотр последнего сообщения'>14 Февраль 2016 - 21:40</a></li>
+													<li><strong>Тема:</strong> <a href='http://zooforum.ru/index.php?showtopic=56448&amp;view=getnewpost' title='Перейти к первому непрочитанному сообщению: Сова'>Сова</a></li>
+													<li>
+														<strong>Автор:</strong> 
+														
+																<a href='http://zooforum.ru/index.php?showuser=67234' title='Просмотр профиля'>poisson</a> <a href='http://zooforum.ru/index.php?showuser=67234' class='__user __id67234' title='Просмотр профиля'><img src='http://zooforum.ru/public/style_images/master/user_popup.png' alt='Иконка' /></a>
+															
+													</li>
+											</ul>
+										</td>
+									</tr>
+							
+
+								<tr class='row1'>
+										<td class='altrow'>
+											<!-- SKINNOTE: this URL is wrong, needs updating -->
+											
+												<a id='forum_img_31' href="http://zooforum.ru/index.php?app=forums&amp;module=forums&amp;section=markasread&amp;marktype=forum&amp;forumid=31&amp;returntoforumid=0&amp;i=1" title="Пометить форум как прочтенный?" class='forum_marker'>
+													<img src='http://zooforum.ru/public/style_images/master/f_unread.png' alt='Не прочитанный форум' title='Отметить прочитанным ' />
+												</a>
+									
+												<script type='text/javascript'>
+													ipb.global.registerMarker( "forum_img_31", "f_unread", markerURL + "31" );
+												</script>
+											
+										</td>
+										<td>
+											<h4><a href="http://zooforum.ru/index.php?showforum=31" title='Перейти к форуму'>Болезни грызунов, диких и экзотических животных</a></h4>
+											<p class='desc'>Консультации лучших специалистов по болезням рептилий, грызунов, обезъян и любой другой экзотики. Лечение хомячков, морских свинок, черепах, крыс, игуан, хамелеонов и проч.</p>
+									
+											
+											<!-- Skinnote: Clean up queued stuff -->
+											
+										</td>
+										<td class='altrow stats'>
+											<ul>
+												<li>5 571 Тем</li>
+												<li>20 617 Ответов</li>
+											</ul>
+										</td>
+										<td>
+											<ul class='last_post'>
+												<li><a href='http://zooforum.ru/index.php?showtopic=56870&amp;view=getlastpost' title='Просмотр последнего сообщения'><img src='http://zooforum.ru/public/style_images/master/last_post.png' alt='Иконка' title='Просмотр последнего сообщения' /></a> <a href='http://zooforum.ru/index.php?showtopic=56870&amp;view=getlastpost' title='Просмотр последнего сообщения'>12 Октябрь 2016 - 15:22</a></li>
+													<li><strong>Тема:</strong> <a href='http://zooforum.ru/index.php?showtopic=56870&amp;view=getnewpost' title='Перейти к первому непрочитанному сообщению: Операция По Удалению Жировика У Морской Свинки'>Операция По Удалению Жирови...</a></li>
+													<li>
+														<strong>Автор:</strong> 
+														
+																<a href='http://zooforum.ru/index.php?showuser=64763' title='Просмотр профиля'>dinka90</a> <a href='http://zooforum.ru/index.php?showuser=64763' class='__user __id64763' title='Просмотр профиля'><img src='http://zooforum.ru/public/style_images/master/user_popup.png' alt='Иконка' /></a>
+															
+													</li>
+											</ul>
+										</td>
+									</tr>
+							
+						</table>
+					</div>
+				
+			
+
+				
+										<div class='category_block block_wrap'>
+						<h3 id='category_55' class='maintitle'><a class='toggle right' href='#' title='Свернуть категорию'>Свернуть категорию</a> <a href="http://zooforum.ru/index.php?showforum=55" title='Просмотр категории'>ДЛЯ ВЕТЕРИНАРНЫХ СПЕЦИАЛИСТОВ</a></h3>
+						<table class='ipb_table' summary="Форумы в категории 'ДЛЯ ВЕТЕРИНАРНЫХ СПЕЦИАЛИСТОВ'">
+							<tr class='header'>
+								<th scope='col' class='col_c_icon'>&nbsp;</th>
+								<th scope='col' class='col_c_forum'>Форум</th>
+								<th scope='col' class='col_c_stats stats'>Статистика</th>
+								<th scope='col' class='col_c_post'>Последнее сообщение</th>
+							</tr>
+							<!-- / CAT HEADER -->
+							
+								<tr class='row1'>
+										<td class='altrow'>
+											<!-- SKINNOTE: this URL is wrong, needs updating -->
+											
+												<a id='forum_img_51' href="http://zooforum.ru/index.php?app=forums&amp;module=forums&amp;section=markasread&amp;marktype=forum&amp;forumid=51&amp;returntoforumid=0&amp;i=1" title="Пометить форум как прочтенный?" class='forum_marker'>
+													<img src='http://zooforum.ru/public/style_images/master/f_unread.png' alt='Не прочитанный форум' title='Отметить прочитанным ' />
+												</a>
+									
+												<script type='text/javascript'>
+													ipb.global.registerMarker( "forum_img_51", "f_unread", markerURL + "51" );
+												</script>
+											
+										</td>
+										<td>
+											<h4><a href="http://zooforum.ru/index.php?showforum=51" title='Перейти к форуму'>Как получить доступ к форуму для ветеринарных специалистов</a></h4>
+											<p class='desc'>Форум для ветеринарных специалистов доступен только для групп "admin, master, moderator, doctor" !<br>По вопросам добавления вашего акаунта в эту группу оставляйте заявку здесь.</p>
+									
+											
+											<!-- Skinnote: Clean up queued stuff -->
+											
+										</td>
+										<td class='altrow stats'>
+											<ul>
+												<li>91 Тем</li>
+												<li>282 Ответов</li>
+											</ul>
+										</td>
+										<td>
+											<ul class='last_post'>
+												<li><a href='http://zooforum.ru/index.php?showtopic=36323&amp;view=getlastpost' title='Просмотр последнего сообщения'><img src='http://zooforum.ru/public/style_images/master/last_post.png' alt='Иконка' title='Просмотр последнего сообщения' /></a> <a href='http://zooforum.ru/index.php?showtopic=36323&amp;view=getlastpost' title='Просмотр последнего сообщения'>05 Октябрь 2015 - 13:36</a></li>
+													<li><strong>Тема:</strong> <a href='http://zooforum.ru/index.php?showtopic=36323&amp;view=getnewpost' title='Перейти к первому непрочитанному сообщению: Как получить доступ к форуму ветеринарных специалистов'>Как получить доступ к форум...</a></li>
+													<li>
+														<strong>Автор:</strong> 
+														
+																<a href='http://zooforum.ru/index.php?showuser=66007' title='Просмотр профиля'>Propofol</a> <a href='http://zooforum.ru/index.php?showuser=66007' class='__user __id66007' title='Просмотр профиля'><img src='http://zooforum.ru/public/style_images/master/user_popup.png' alt='Иконка' /></a>
+															
+													</li>
+											</ul>
+										</td>
+									</tr>
+							
+						</table>
+					</div>
+				
+			
+
+				
+										<div class='category_block block_wrap'>
+						<h3 id='category_59' class='maintitle'><a class='toggle right' href='#' title='Свернуть категорию'>Свернуть категорию</a> <a href="http://zooforum.ru/index.php?showforum=59" title='Просмотр категории'>Проблемы поведения домашних животных</a></h3>
+						<table class='ipb_table' summary="Форумы в категории 'Проблемы поведения домашних животных'">
+							<tr class='header'>
+								<th scope='col' class='col_c_icon'>&nbsp;</th>
+								<th scope='col' class='col_c_forum'>Форум</th>
+								<th scope='col' class='col_c_stats stats'>Статистика</th>
+								<th scope='col' class='col_c_post'>Последнее сообщение</th>
+							</tr>
+							<!-- / CAT HEADER -->
+							
+								<tr class='row1'>
+										<td class='altrow'>
+											<!-- SKINNOTE: this URL is wrong, needs updating -->
+											
+												<a id='forum_img_33' href="http://zooforum.ru/index.php?app=forums&amp;module=forums&amp;section=markasread&amp;marktype=forum&amp;forumid=33&amp;returntoforumid=0&amp;i=1" title="Пометить форум как прочтенный?" class='forum_marker'>
+													<img src='http://zooforum.ru/public/style_images/master/f_unread.png' alt='Не прочитанный форум' title='Отметить прочитанным ' />
+												</a>
+									
+												<script type='text/javascript'>
+													ipb.global.registerMarker( "forum_img_33", "f_unread", markerURL + "33" );
+												</script>
+											
+										</td>
+										<td>
+											<h4><a href="http://zooforum.ru/index.php?showforum=33" title='Перейти к форуму'>Поведение собак. Дрессировка.</a></h4>
+											<p class='desc'>Обсуждаются поведенческие проблемы собак, а также вопросы дрессировки четвероногих друзей.</p>
+									
+											
+											<!-- Skinnote: Clean up queued stuff -->
+											
+										</td>
+										<td class='altrow stats'>
+											<ul>
+												<li>651 Тем</li>
+												<li>5 321 Ответов</li>
+											</ul>
+										</td>
+										<td>
+											<ul class='last_post'>
+												<li><a href='http://zooforum.ru/index.php?showtopic=57005&amp;view=getlastpost' title='Просмотр последнего сообщения'><img src='http://zooforum.ru/public/style_images/master/last_post.png' alt='Иконка' title='Просмотр последнего сообщения' /></a> <a href='http://zooforum.ru/index.php?showtopic=57005&amp;view=getlastpost' title='Просмотр последнего сообщения'>28 Сентябрь 2016 - 20:51</a></li>
+													<li><strong>Тема:</strong> <a href='http://zooforum.ru/index.php?showtopic=57005&amp;view=getnewpost' title='Перейти к первому непрочитанному сообщению: Собака Гоняет Котов&#33;'>Собака Гоняет Котов!</a></li>
+													<li>
+														<strong>Автор:</strong> 
+														
+																<a href='http://zooforum.ru/index.php?showuser=69117' title='Просмотр профиля'>luchshayasemya2050</a> <a href='http://zooforum.ru/index.php?showuser=69117' class='__user __id69117' title='Просмотр профиля'><img src='http://zooforum.ru/public/style_images/master/user_popup.png' alt='Иконка' /></a>
+															
+													</li>
+											</ul>
+										</td>
+									</tr>
+							
+
+								<tr class='row2'>
+										<td class='altrow'>
+											<!-- SKINNOTE: this URL is wrong, needs updating -->
+											
+												<a id='forum_img_34' href="http://zooforum.ru/index.php?app=forums&amp;module=forums&amp;section=markasread&amp;marktype=forum&amp;forumid=34&amp;returntoforumid=0&amp;i=1" title="Пометить форум как прочтенный?" class='forum_marker'>
+													<img src='http://zooforum.ru/public/style_images/master/f_unread.png' alt='Не прочитанный форум' title='Отметить прочитанным ' />
+												</a>
+									
+												<script type='text/javascript'>
+													ipb.global.registerMarker( "forum_img_34", "f_unread", markerURL + "34" );
+												</script>
+											
+										</td>
+										<td>
+											<h4><a href="http://zooforum.ru/index.php?showforum=34" title='Перейти к форуму'>Поведение кошек</a></h4>
+											<p class='desc'>Обсуждение поведенческих проблем у кошек</p>
+									
+											
+											<!-- Skinnote: Clean up queued stuff -->
+											
+										</td>
+										<td class='altrow stats'>
+											<ul>
+												<li>911 Тем</li>
+												<li>7 727 Ответов</li>
+											</ul>
+										</td>
+										<td>
+											<ul class='last_post'>
+												<li><a href='http://zooforum.ru/index.php?showtopic=56835&amp;view=getlastpost' title='Просмотр последнего сообщения'><img src='http://zooforum.ru/public/style_images/master/last_post.png' alt='Иконка' title='Просмотр последнего сообщения' /></a> <a href='http://zooforum.ru/index.php?showtopic=56835&amp;view=getlastpost' title='Просмотр последнего сообщения'>08 Июнь 2016 - 15:20</a></li>
+													<li><strong>Тема:</strong> <a href='http://zooforum.ru/index.php?showtopic=56835&amp;view=getnewpost' title='Перейти к первому непрочитанному сообщению: Требуется Совет Специалиста'>Требуется Совет Специалиста</a></li>
+													<li>
+														<strong>Автор:</strong> 
+														
+																<a href='http://zooforum.ru/index.php?showuser=68380' title='Просмотр профиля'>gurzanara</a> <a href='http://zooforum.ru/index.php?showuser=68380' class='__user __id68380' title='Просмотр профиля'><img src='http://zooforum.ru/public/style_images/master/user_popup.png' alt='Иконка' /></a>
+															
+													</li>
+											</ul>
+										</td>
+									</tr>
+							
+
+								<tr class='row1'>
+										<td class='altrow'>
+											<!-- SKINNOTE: this URL is wrong, needs updating -->
+											
+												<a id='forum_img_107' href="http://zooforum.ru/index.php?app=forums&amp;module=forums&amp;section=markasread&amp;marktype=forum&amp;forumid=107&amp;returntoforumid=0&amp;i=1" title="Пометить форум как прочтенный?" class='forum_marker'>
+													<img src='http://zooforum.ru/public/style_images/master/f_unread.png' alt='Не прочитанный форум' title='Отметить прочитанным ' />
+												</a>
+									
+												<script type='text/javascript'>
+													ipb.global.registerMarker( "forum_img_107", "f_unread", markerURL + "107" );
+												</script>
+											
+										</td>
+										<td>
+											<h4><a href="http://zooforum.ru/index.php?showforum=107" title='Перейти к форуму'>Поведение грызунов</a></h4>
+											<p class='desc'></p>
+									
+											
+											<!-- Skinnote: Clean up queued stuff -->
+											
+										</td>
+										<td class='altrow stats'>
+											<ul>
+												<li>81 Тем</li>
+												<li>1 093 Ответов</li>
+											</ul>
+										</td>
+										<td>
+											<ul class='last_post'>
+												<li><a href='http://zooforum.ru/index.php?showtopic=56489&amp;view=getlastpost' title='Просмотр последнего сообщения'><img src='http://zooforum.ru/public/style_images/master/last_post.png' alt='Иконка' title='Просмотр последнего сообщения' /></a> <a href='http://zooforum.ru/index.php?showtopic=56489&amp;view=getlastpost' title='Просмотр последнего сообщения'>25 Февраль 2016 - 10:22</a></li>
+													<li><strong>Тема:</strong> <a href='http://zooforum.ru/index.php?showtopic=56489&amp;view=getnewpost' title='Перейти к первому непрочитанному сообщению: Sos&#33; У Шиншиллы После Операции Нет Болюсов 5 Дней&#33;'>Sos! У Шиншиллы После Опера...</a></li>
+													<li>
+														<strong>Автор:</strong> 
+														
+																<a href='http://zooforum.ru/index.php?showuser=64894' title='Просмотр профиля'>MissTatsiana</a> <a href='http://zooforum.ru/index.php?showuser=64894' class='__user __id64894' title='Просмотр профиля'><img src='http://zooforum.ru/public/style_images/master/user_popup.png' alt='Иконка' /></a>
+															
+													</li>
+											</ul>
+										</td>
+									</tr>
+							
+						</table>
+					</div>
+				
+			
+
+				
+										<div class='category_block block_wrap'>
+						<h3 id='category_54' class='maintitle'><a class='toggle right' href='#' title='Свернуть категорию'>Свернуть категорию</a> <a href="http://zooforum.ru/index.php?showforum=54" title='Просмотр категории'>Гуманное отношение к животным</a></h3>
+						<table class='ipb_table' summary="Форумы в категории 'Гуманное отношение к животным'">
+							<tr class='header'>
+								<th scope='col' class='col_c_icon'>&nbsp;</th>
+								<th scope='col' class='col_c_forum'>Форум</th>
+								<th scope='col' class='col_c_stats stats'>Статистика</th>
+								<th scope='col' class='col_c_post'>Последнее сообщение</th>
+							</tr>
+							<!-- / CAT HEADER -->
+							
+								<tr class='row1'>
+										<td class='altrow'>
+											<!-- SKINNOTE: this URL is wrong, needs updating -->
+											
+												<a id='forum_img_23' href="http://zooforum.ru/index.php?app=forums&amp;module=forums&amp;section=markasread&amp;marktype=forum&amp;forumid=23&amp;returntoforumid=0&amp;i=1" title="Пометить форум как прочтенный?" class='forum_marker'>
+													<img src='http://zooforum.ru/public/style_images/master/f_unread.png' alt='Не прочитанный форум' title='Отметить прочитанным ' />
+												</a>
+									
+												<script type='text/javascript'>
+													ipb.global.registerMarker( "forum_img_23", "f_unread", markerURL + "23" );
+												</script>
+											
+										</td>
+										<td>
+											<h4><a href="http://zooforum.ru/index.php?showforum=23" title='Перейти к форуму'>Помощь бездомным и нуждающимся животным</a></h4>
+											<p class='desc'>Забота о бездомных животных и др.</p>
+									
+											
+											<!-- Skinnote: Clean up queued stuff -->
+											
+										</td>
+										<td class='altrow stats'>
+											<ul>
+												<li>1 028 Тем</li>
+												<li>1 955 Ответов</li>
+											</ul>
+										</td>
+										<td>
+											<ul class='last_post'>
+												<li><a href='http://zooforum.ru/index.php?showtopic=56420&amp;view=getlastpost' title='Просмотр последнего сообщения'><img src='http://zooforum.ru/public/style_images/master/last_post.png' alt='Иконка' title='Просмотр последнего сообщения' /></a> <a href='http://zooforum.ru/index.php?showtopic=56420&amp;view=getlastpost' title='Просмотр последнего сообщения'>Сегодня, 16:00</a></li>
+													<li><strong>Тема:</strong> <a href='http://zooforum.ru/index.php?showtopic=56420&amp;view=getnewpost' title='Перейти к первому непрочитанному сообщению: Приют Людмилы'>Приют Людмилы</a></li>
+													<li>
+														<strong>Автор:</strong> 
+														
+																<a href='http://zooforum.ru/index.php?showuser=31498' title='Просмотр профиля'>муррена</a> <a href='http://zooforum.ru/index.php?showuser=31498' class='__user __id31498' title='Просмотр профиля'><img src='http://zooforum.ru/public/style_images/master/user_popup.png' alt='Иконка' /></a>
+															
+													</li>
+											</ul>
+										</td>
+									</tr>
+							
+
+								<tr class='row2'>
+										<td class='altrow'>
+											<!-- SKINNOTE: this URL is wrong, needs updating -->
+											
+												<a id='forum_img_2' href="http://zooforum.ru/index.php?app=forums&amp;module=forums&amp;section=markasread&amp;marktype=forum&amp;forumid=2&amp;returntoforumid=0&amp;i=1" title="Пометить форум как прочтенный?" class='forum_marker'>
+													<img src='http://zooforum.ru/public/style_images/master/f_unread.png' alt='Не прочитанный форум' title='Отметить прочитанным ' />
+												</a>
+									
+												<script type='text/javascript'>
+													ipb.global.registerMarker( "forum_img_2", "f_unread", markerURL + "2" );
+												</script>
+											
+										</td>
+										<td>
+											<h4><a href="http://zooforum.ru/index.php?showforum=2" title='Перейти к форуму'>Домашний уход за неизлечимо больными животными</a></h4>
+											<p class='desc'>Вопросы кормления, анальгезии, борьбы с тошнотой/рвотой, анемией.</p>
+									
+											
+											<!-- Skinnote: Clean up queued stuff -->
+											
+										</td>
+										<td class='altrow stats'>
+											<ul>
+												<li>95 Тем</li>
+												<li>754 Ответов</li>
+											</ul>
+										</td>
+										<td>
+											<ul class='last_post'>
+												<li><a href='http://zooforum.ru/index.php?showtopic=55452&amp;view=getlastpost' title='Просмотр последнего сообщения'><img src='http://zooforum.ru/public/style_images/master/last_post.png' alt='Иконка' title='Просмотр последнего сообщения' /></a> <a href='http://zooforum.ru/index.php?showtopic=55452&amp;view=getlastpost' title='Просмотр последнего сообщения'>14 Ноябрь 2015 - 23:20</a></li>
+													<li><strong>Тема:</strong> <a href='http://zooforum.ru/index.php?showtopic=55452&amp;view=getnewpost' title='Перейти к первому непрочитанному сообщению: Как Правильно Кормить 10 Дневного Котенка'>Как Правильно Кормить 10 Дн...</a></li>
+													<li>
+														<strong>Автор:</strong> 
+														
+																<a href='http://zooforum.ru/index.php?showuser=65126' title='Просмотр профиля'>Koteyko</a> <a href='http://zooforum.ru/index.php?showuser=65126' class='__user __id65126' title='Просмотр профиля'><img src='http://zooforum.ru/public/style_images/master/user_popup.png' alt='Иконка' /></a>
+															
+													</li>
+											</ul>
+										</td>
+									</tr>
+							
+
+								<tr class='row1'>
+										<td class='altrow'>
+											<!-- SKINNOTE: this URL is wrong, needs updating -->
+											
+												<a id='forum_img_1' href="http://zooforum.ru/index.php?app=forums&amp;module=forums&amp;section=markasread&amp;marktype=forum&amp;forumid=1&amp;returntoforumid=0&amp;i=1" title="Пометить форум как прочтенный?" class='forum_marker'>
+													<img src='http://zooforum.ru/public/style_images/master/f_unread.png' alt='Не прочитанный форум' title='Отметить прочитанным ' />
+												</a>
+									
+												<script type='text/javascript'>
+													ipb.global.registerMarker( "forum_img_1", "f_unread", markerURL + "1" );
+												</script>
+											
+										</td>
+										<td>
+											<h4><a href="http://zooforum.ru/index.php?showforum=1" title='Перейти к форуму'>Усыпление (эутаназия) и гуманное отношение к животным</a></h4>
+											<p class='desc'>Гуманная мера или варварское убийство?!</p>
+									
+											
+											<!-- Skinnote: Clean up queued stuff -->
+											
+										</td>
+										<td class='altrow stats'>
+											<ul>
+												<li>166 Тем</li>
+												<li>3 454 Ответов</li>
+											</ul>
+										</td>
+										<td>
+											<ul class='last_post'>
+												<li><a href='http://zooforum.ru/index.php?showtopic=56059&amp;view=getlastpost' title='Просмотр последнего сообщения'><img src='http://zooforum.ru/public/style_images/master/last_post.png' alt='Иконка' title='Просмотр последнего сообщения' /></a> <a href='http://zooforum.ru/index.php?showtopic=56059&amp;view=getlastpost' title='Просмотр последнего сообщения'>09 Декабрь 2015 - 19:45</a></li>
+													<li><strong>Тема:</strong> <a href='http://zooforum.ru/index.php?showtopic=56059&amp;view=getnewpost' title='Перейти к первому непрочитанному сообщению: В Тупике'>В Тупике</a></li>
+													<li>
+														<strong>Автор:</strong> 
+														
+																<a href='http://zooforum.ru/index.php?showuser=42914' title='Просмотр профиля'>katyxr</a> <a href='http://zooforum.ru/index.php?showuser=42914' class='__user __id42914' title='Просмотр профиля'><img src='http://zooforum.ru/public/style_images/master/user_popup.png' alt='Иконка' /></a>
+															
+													</li>
+											</ul>
+										</td>
+									</tr>
+							
+						</table>
+					</div>
+				
+			
+
+				
+										<div class='category_block block_wrap'>
+						<h3 id='category_60' class='maintitle'><a class='toggle right' href='#' title='Свернуть категорию'>Свернуть категорию</a> <a href="http://zooforum.ru/index.php?showforum=60" title='Просмотр категории'>Обьявления</a></h3>
+						<table class='ipb_table' summary="Форумы в категории 'Обьявления'">
+							<tr class='header'>
+								<th scope='col' class='col_c_icon'>&nbsp;</th>
+								<th scope='col' class='col_c_forum'>Форум</th>
+								<th scope='col' class='col_c_stats stats'>Статистика</th>
+								<th scope='col' class='col_c_post'>Последнее сообщение</th>
+							</tr>
+							<!-- / CAT HEADER -->
+							
+								<tr class='row1'>
+										<td class='altrow'>
+											<!-- SKINNOTE: this URL is wrong, needs updating -->
+											
+												<a id='forum_img_42' href="http://zooforum.ru/index.php?app=forums&amp;module=forums&amp;section=markasread&amp;marktype=forum&amp;forumid=42&amp;returntoforumid=0&amp;i=1" title="Пометить форум как прочтенный?" class='forum_marker'>
+													<img src='http://zooforum.ru/public/style_images/master/f_unread.png' alt='Не прочитанный форум' title='Отметить прочитанным ' />
+												</a>
+									
+												<script type='text/javascript'>
+													ipb.global.registerMarker( "forum_img_42", "f_unread", markerURL + "42" );
+												</script>
+											
+										</td>
+										<td>
+											<h4><a href="http://zooforum.ru/index.php?showforum=42" title='Перейти к форуму'>Продажа щенков</a></h4>
+											<p class='desc'>объявления о продаже щенков</p>
+									
+											
+											<!-- Skinnote: Clean up queued stuff -->
+											
+										</td>
+										<td class='altrow stats'>
+											<ul>
+												<li>224 Тем</li>
+												<li>840 Ответов</li>
+											</ul>
+										</td>
+										<td>
+											<ul class='last_post'>
+												<li><a href='http://zooforum.ru/index.php?showtopic=56725&amp;view=getlastpost' title='Просмотр последнего сообщения'><img src='http://zooforum.ru/public/style_images/master/last_post.png' alt='Иконка' title='Просмотр последнего сообщения' /></a> <a href='http://zooforum.ru/index.php?showtopic=56725&amp;view=getlastpost' title='Просмотр последнего сообщения'>11 Сентябрь 2016 - 09:50</a></li>
+													<li><strong>Тема:</strong> <a href='http://zooforum.ru/index.php?showtopic=56725&amp;view=getnewpost' title='Перейти к первому непрочитанному сообщению: Щенки Шар-Пея В Кемеровской Области'>Щенки Шар-Пея В Кемеровской...</a></li>
+													<li>
+														<strong>Автор:</strong> 
+														
+																<a href='http://zooforum.ru/index.php?showuser=54596' title='Просмотр профиля'>illiada</a> <a href='http://zooforum.ru/index.php?showuser=54596' class='__user __id54596' title='Просмотр профиля'><img src='http://zooforum.ru/public/style_images/master/user_popup.png' alt='Иконка' /></a>
+															
+													</li>
+											</ul>
+										</td>
+									</tr>
+							
+
+								<tr class='row2'>
+										<td class='altrow'>
+											<!-- SKINNOTE: this URL is wrong, needs updating -->
+											
+												<a id='forum_img_68' href="http://zooforum.ru/index.php?app=forums&amp;module=forums&amp;section=markasread&amp;marktype=forum&amp;forumid=68&amp;returntoforumid=0&amp;i=1" title="Пометить форум как прочтенный?" class='forum_marker'>
+													<img src='http://zooforum.ru/public/style_images/master/f_unread.png' alt='Не прочитанный форум' title='Отметить прочитанным ' />
+												</a>
+									
+												<script type='text/javascript'>
+													ipb.global.registerMarker( "forum_img_68", "f_unread", markerURL + "68" );
+												</script>
+											
+										</td>
+										<td>
+											<h4><a href="http://zooforum.ru/index.php?showforum=68" title='Перейти к форуму'>Продажа котят</a></h4>
+											<p class='desc'></p>
+									
+											
+											<!-- Skinnote: Clean up queued stuff -->
+											
+										</td>
+										<td class='altrow stats'>
+											<ul>
+												<li>96 Тем</li>
+												<li>189 Ответов</li>
+											</ul>
+										</td>
+										<td>
+											<ul class='last_post'>
+												<li><a href='http://zooforum.ru/index.php?showtopic=56840&amp;view=getlastpost' title='Просмотр последнего сообщения'><img src='http://zooforum.ru/public/style_images/master/last_post.png' alt='Иконка' title='Просмотр последнего сообщения' /></a> <a href='http://zooforum.ru/index.php?showtopic=56840&amp;view=getlastpost' title='Просмотр последнего сообщения'>09 Июнь 2016 - 08:55</a></li>
+													<li><strong>Тема:</strong> <a href='http://zooforum.ru/index.php?showtopic=56840&amp;view=getnewpost' title='Перейти к первому непрочитанному сообщению: Крупный Шикарный Котик Скоттиш- Фолд'>Крупный Шикарный Котик Скот...</a></li>
+													<li>
+														<strong>Автор:</strong> 
+														
+																<a href='http://zooforum.ru/index.php?showuser=53467' title='Просмотр профиля'>nelia</a> <a href='http://zooforum.ru/index.php?showuser=53467' class='__user __id53467' title='Просмотр профиля'><img src='http://zooforum.ru/public/style_images/master/user_popup.png' alt='Иконка' /></a>
+															
+													</li>
+											</ul>
+										</td>
+									</tr>
+							
+
+								<tr class='row1'>
+										<td class='altrow'>
+											<!-- SKINNOTE: this URL is wrong, needs updating -->
+											
+												<a id='forum_img_103' href="http://zooforum.ru/index.php?app=forums&amp;module=forums&amp;section=markasread&amp;marktype=forum&amp;forumid=103&amp;returntoforumid=0&amp;i=1" title="Пометить форум как прочтенный?" class='forum_marker'>
+													<img src='http://zooforum.ru/public/style_images/master/f_unread.png' alt='Не прочитанный форум' title='Отметить прочитанным ' />
+												</a>
+									
+												<script type='text/javascript'>
+													ipb.global.registerMarker( "forum_img_103", "f_unread", markerURL + "103" );
+												</script>
+											
+										</td>
+										<td>
+											<h4><a href="http://zooforum.ru/index.php?showforum=103" title='Перейти к форуму'>Пристройство животных</a></h4>
+											<p class='desc'></p>
+									
+											
+											<!-- Skinnote: Clean up queued stuff -->
+											
+										</td>
+										<td class='altrow stats'>
+											<ul>
+												<li>991 Тем</li>
+												<li>985 Ответов</li>
+											</ul>
+										</td>
+										<td>
+											<ul class='last_post'>
+												<li><a href='http://zooforum.ru/index.php?showtopic=56946&amp;view=getlastpost' title='Просмотр последнего сообщения'><img src='http://zooforum.ru/public/style_images/master/last_post.png' alt='Иконка' title='Просмотр последнего сообщения' /></a> <a href='http://zooforum.ru/index.php?showtopic=56946&amp;view=getlastpost' title='Просмотр последнего сообщения'>12 Сентябрь 2016 - 20:02</a></li>
+													<li><strong>Тема:</strong> <a href='http://zooforum.ru/index.php?showtopic=56946&amp;view=getnewpost' title='Перейти к первому непрочитанному сообщению: Русская Голубая Кошка В Добрые Руки'>Русская Голубая Кошка В Доб...</a></li>
+													<li>
+														<strong>Автор:</strong> 
+														
+																<a href='http://zooforum.ru/index.php?showuser=13364' title='Просмотр профиля'>altena</a> <a href='http://zooforum.ru/index.php?showuser=13364' class='__user __id13364' title='Просмотр профиля'><img src='http://zooforum.ru/public/style_images/master/user_popup.png' alt='Иконка' /></a>
+															
+													</li>
+											</ul>
+										</td>
+									</tr>
+							
+
+								<tr class='row2'>
+										<td class='altrow'>
+											<!-- SKINNOTE: this URL is wrong, needs updating -->
+											
+												<a id='forum_img_113' href="http://zooforum.ru/index.php?app=forums&amp;module=forums&amp;section=markasread&amp;marktype=forum&amp;forumid=113&amp;returntoforumid=0&amp;i=1" title="Пометить форум как прочтенный?" class='forum_marker'>
+													<img src='http://zooforum.ru/public/style_images/master/f_unread.png' alt='Не прочитанный форум' title='Отметить прочитанным ' />
+												</a>
+									
+												<script type='text/javascript'>
+													ipb.global.registerMarker( "forum_img_113", "f_unread", markerURL + "113" );
+												</script>
+											
+										</td>
+										<td>
+											<h4><a href="http://zooforum.ru/index.php?showforum=113" title='Перейти к форуму'>Отдам бесплатно</a></h4>
+											<p class='desc'>Задаром, т.е безвоздмездно (С)</p>
+									
+											
+											<!-- Skinnote: Clean up queued stuff -->
+											
+										</td>
+										<td class='altrow stats'>
+											<ul>
+												<li>99 Тем</li>
+												<li>107 Ответов</li>
+											</ul>
+										</td>
+										<td>
+											<ul class='last_post'>
+												<li><a href='http://zooforum.ru/index.php?showtopic=56993&amp;view=getlastpost' title='Просмотр последнего сообщения'><img src='http://zooforum.ru/public/style_images/master/last_post.png' alt='Иконка' title='Просмотр последнего сообщения' /></a> <a href='http://zooforum.ru/index.php?showtopic=56993&amp;view=getlastpost' title='Просмотр последнего сообщения'>23 Сентябрь 2016 - 07:03</a></li>
+													<li><strong>Тема:</strong> <a href='http://zooforum.ru/index.php?showtopic=56993&amp;view=getnewpost' title='Перейти к первому непрочитанному сообщению: Отдам Каниквантел'>Отдам Каниквантел</a></li>
+													<li>
+														<strong>Автор:</strong> 
+														
+																<a href='http://zooforum.ru/index.php?showuser=13364' title='Просмотр профиля'>altena</a> <a href='http://zooforum.ru/index.php?showuser=13364' class='__user __id13364' title='Просмотр профиля'><img src='http://zooforum.ru/public/style_images/master/user_popup.png' alt='Иконка' /></a>
+															
+													</li>
+											</ul>
+										</td>
+									</tr>
+							
+
+								<tr class='row1'>
+										<td class='altrow'>
+											<!-- SKINNOTE: this URL is wrong, needs updating -->
+											
+												<a id='forum_img_72' href="http://zooforum.ru/index.php?app=forums&amp;module=forums&amp;section=markasread&amp;marktype=forum&amp;forumid=72&amp;returntoforumid=0&amp;i=1" title="Пометить форум как прочтенный?" class='forum_marker'>
+													<img src='http://zooforum.ru/public/style_images/master/f_unread.png' alt='Не прочитанный форум' title='Отметить прочитанным ' />
+												</a>
+									
+												<script type='text/javascript'>
+													ipb.global.registerMarker( "forum_img_72", "f_unread", markerURL + "72" );
+												</script>
+											
+										</td>
+										<td>
+											<h4><a href="http://zooforum.ru/index.php?showforum=72" title='Перейти к форуму'>Продажи и покупка птиц</a></h4>
+											<p class='desc'></p>
+									
+											
+											<!-- Skinnote: Clean up queued stuff -->
+											
+										</td>
+										<td class='altrow stats'>
+											<ul>
+												<li>27 Тем</li>
+												<li>44 Ответов</li>
+											</ul>
+										</td>
+										<td>
+											<ul class='last_post'>
+												<li><a href='http://zooforum.ru/index.php?showtopic=56306&amp;view=getlastpost' title='Просмотр последнего сообщения'><img src='http://zooforum.ru/public/style_images/master/last_post.png' alt='Иконка' title='Просмотр последнего сообщения' /></a> <a href='http://zooforum.ru/index.php?showtopic=56306&amp;view=getlastpost' title='Просмотр последнего сообщения'>23 Январь 2016 - 16:28</a></li>
+													<li><strong>Тема:</strong> <a href='http://zooforum.ru/index.php?showtopic=56306&amp;view=getnewpost' title='Перейти к первому непрочитанному сообщению: Продам Попугаев Собственного Развдения'>Продам Попугаев Собственног...</a></li>
+													<li>
+														<strong>Автор:</strong> 
+														
+																<a href='http://zooforum.ru/index.php?showuser=67003' title='Просмотр профиля'>VladimirAlex</a> <a href='http://zooforum.ru/index.php?showuser=67003' class='__user __id67003' title='Просмотр профиля'><img src='http://zooforum.ru/public/style_images/master/user_popup.png' alt='Иконка' /></a>
+															
+													</li>
+											</ul>
+										</td>
+									</tr>
+							
+
+								<tr class='row2'>
+										<td class='altrow'>
+											<!-- SKINNOTE: this URL is wrong, needs updating -->
+											
+												<a id='forum_img_71' href="http://zooforum.ru/index.php?app=forums&amp;module=forums&amp;section=markasread&amp;marktype=forum&amp;forumid=71&amp;returntoforumid=0&amp;i=1" title="Пометить форум как прочтенный?" class='forum_marker'>
+													<img src='http://zooforum.ru/public/style_images/master/f_unread.png' alt='Не прочитанный форум' title='Отметить прочитанным ' />
+												</a>
+									
+												<script type='text/javascript'>
+													ipb.global.registerMarker( "forum_img_71", "f_unread", markerURL + "71" );
+												</script>
+											
+										</td>
+										<td>
+											<h4><a href="http://zooforum.ru/index.php?showforum=71" title='Перейти к форуму'>Продажа и покупка грызунов</a></h4>
+											<p class='desc'></p>
+									
+											
+											<!-- Skinnote: Clean up queued stuff -->
+											
+										</td>
+										<td class='altrow stats'>
+											<ul>
+												<li>44 Тем</li>
+												<li>52 Ответов</li>
+											</ul>
+										</td>
+										<td>
+											<ul class='last_post'>
+												<li><a href='http://zooforum.ru/index.php?showtopic=56141&amp;view=getlastpost' title='Просмотр последнего сообщения'><img src='http://zooforum.ru/public/style_images/master/last_post.png' alt='Иконка' title='Просмотр последнего сообщения' /></a> <a href='http://zooforum.ru/index.php?showtopic=56141&amp;view=getlastpost' title='Просмотр последнего сообщения'>20 Декабрь 2015 - 10:16</a></li>
+													<li><strong>Тема:</strong> <a href='http://zooforum.ru/index.php?showtopic=56141&amp;view=getnewpost' title='Перейти к первому непрочитанному сообщению: Шиншилы'>Шиншилы</a></li>
+													<li>
+														<strong>Автор:</strong> 
+														
+																<a href='http://zooforum.ru/index.php?showuser=66718' title='Просмотр профиля'>Асоль</a> <a href='http://zooforum.ru/index.php?showuser=66718' class='__user __id66718' title='Просмотр профиля'><img src='http://zooforum.ru/public/style_images/master/user_popup.png' alt='Иконка' /></a>
+															
+													</li>
+											</ul>
+										</td>
+									</tr>
+							
+
+								<tr class='row1'>
+										<td class='altrow'>
+											<!-- SKINNOTE: this URL is wrong, needs updating -->
+											
+												<a id='forum_img_43' href="http://zooforum.ru/index.php?app=forums&amp;module=forums&amp;section=markasread&amp;marktype=forum&amp;forumid=43&amp;returntoforumid=0&amp;i=1" title="Пометить форум как прочтенный?" class='forum_marker'>
+													<img src='http://zooforum.ru/public/style_images/master/f_unread.png' alt='Не прочитанный форум' title='Отметить прочитанным ' />
+												</a>
+									
+												<script type='text/javascript'>
+													ipb.global.registerMarker( "forum_img_43", "f_unread", markerURL + "43" );
+												</script>
+											
+										</td>
+										<td>
+											<h4><a href="http://zooforum.ru/index.php?showforum=43" title='Перейти к форуму'>Ищу щенка</a></h4>
+											<p class='desc'>ищете щенка? Не нужно перерывать весь интернет. Владельцы питомников сами вас найдут. Оставте только тут свою заявку.</p>
+									
+											
+											<!-- Skinnote: Clean up queued stuff -->
+											
+										</td>
+										<td class='altrow stats'>
+											<ul>
+												<li>27 Тем</li>
+												<li>39 Ответов</li>
+											</ul>
+										</td>
+										<td>
+											<ul class='last_post'>
+												<li><a href='http://zooforum.ru/index.php?showtopic=56745&amp;view=getlastpost' title='Просмотр последнего сообщения'><img src='http://zooforum.ru/public/style_images/master/last_post.png' alt='Иконка' title='Просмотр последнего сообщения' /></a> <a href='http://zooforum.ru/index.php?showtopic=56745&amp;view=getlastpost' title='Просмотр последнего сообщения'>05 Май 2016 - 21:50</a></li>
+													<li><strong>Тема:</strong> <a href='http://zooforum.ru/index.php?showtopic=56745&amp;view=getnewpost' title='Перейти к первому непрочитанному сообщению: Нужен  Кабель Ротвейлер От 1 Года До 3Лет'>Нужен  Кабель Ротвейлер От ...</a></li>
+													<li>
+														<strong>Автор:</strong> 
+														
+																<a href='http://zooforum.ru/index.php?showuser=56143' title='Просмотр профиля'>foma12</a> <a href='http://zooforum.ru/index.php?showuser=56143' class='__user __id56143' title='Просмотр профиля'><img src='http://zooforum.ru/public/style_images/master/user_popup.png' alt='Иконка' /></a>
+															
+													</li>
+											</ul>
+										</td>
+									</tr>
+							
+
+								<tr class='row2'>
+										<td class='altrow'>
+											<!-- SKINNOTE: this URL is wrong, needs updating -->
+											
+												<a id='forum_img_69' href="http://zooforum.ru/index.php?app=forums&amp;module=forums&amp;section=markasread&amp;marktype=forum&amp;forumid=69&amp;returntoforumid=0&amp;i=1" title="Пометить форум как прочтенный?" class='forum_marker'>
+													<img src='http://zooforum.ru/public/style_images/master/f_unread.png' alt='Не прочитанный форум' title='Отметить прочитанным ' />
+												</a>
+									
+												<script type='text/javascript'>
+													ipb.global.registerMarker( "forum_img_69", "f_unread", markerURL + "69" );
+												</script>
+											
+										</td>
+										<td>
+											<h4><a href="http://zooforum.ru/index.php?showforum=69" title='Перейти к форуму'>Ищу котенка</a></h4>
+											<p class='desc'></p>
+									
+											
+											<!-- Skinnote: Clean up queued stuff -->
+											
+										</td>
+										<td class='altrow stats'>
+											<ul>
+												<li>6 Тем</li>
+												<li>21 Ответов</li>
+											</ul>
+										</td>
+										<td>
+											<ul class='last_post'>
+												<li><a href='http://zooforum.ru/index.php?showtopic=53806&amp;view=getlastpost' title='Просмотр последнего сообщения'><img src='http://zooforum.ru/public/style_images/master/last_post.png' alt='Иконка' title='Просмотр последнего сообщения' /></a> <a href='http://zooforum.ru/index.php?showtopic=53806&amp;view=getlastpost' title='Просмотр последнего сообщения'>10 Июль 2016 - 20:09</a></li>
+													<li><strong>Тема:</strong> <a href='http://zooforum.ru/index.php?showtopic=53806&amp;view=getnewpost' title='Перейти к первому непрочитанному сообщению: Пропажа Котиков'>Пропажа Котиков</a></li>
+													<li>
+														<strong>Автор:</strong> 
+														
+																<a href='http://zooforum.ru/index.php?showuser=13364' title='Просмотр профиля'>altena</a> <a href='http://zooforum.ru/index.php?showuser=13364' class='__user __id13364' title='Просмотр профиля'><img src='http://zooforum.ru/public/style_images/master/user_popup.png' alt='Иконка' /></a>
+															
+													</li>
+											</ul>
+										</td>
+									</tr>
+							
+						</table>
+					</div>
+				
+			
+
+				
+										<div class='category_block block_wrap'>
+						<h3 id='category_64' class='maintitle'><a class='toggle right' href='#' title='Свернуть категорию'>Свернуть категорию</a> <a href="http://zooforum.ru/index.php?showforum=64" title='Просмотр категории'>Общение</a></h3>
+						<table class='ipb_table' summary="Форумы в категории 'Общение'">
+							<tr class='header'>
+								<th scope='col' class='col_c_icon'>&nbsp;</th>
+								<th scope='col' class='col_c_forum'>Форум</th>
+								<th scope='col' class='col_c_stats stats'>Статистика</th>
+								<th scope='col' class='col_c_post'>Последнее сообщение</th>
+							</tr>
+							<!-- / CAT HEADER -->
+							
+								<tr class='row1'>
+										<td class='altrow'>
+											<!-- SKINNOTE: this URL is wrong, needs updating -->
+											
+												<a id='forum_img_66' href="http://zooforum.ru/index.php?app=forums&amp;module=forums&amp;section=markasread&amp;marktype=forum&amp;forumid=66&amp;returntoforumid=0&amp;i=1" title="Пометить форум как прочтенный?" class='forum_marker'>
+													<img src='http://zooforum.ru/public/style_images/master/f_unread.png' alt='Не прочитанный форум' title='Отметить прочитанным ' />
+												</a>
+									
+												<script type='text/javascript'>
+													ipb.global.registerMarker( "forum_img_66", "f_unread", markerURL + "66" );
+												</script>
+											
+										</td>
+										<td>
+											<h4><a href="http://zooforum.ru/index.php?showforum=66" title='Перейти к форуму'>Общение любителей собак</a></h4>
+											<p class='desc'>Общение любителей собак </p>
+									
+											
+											<!-- Skinnote: Clean up queued stuff -->
+											
+										</td>
+										<td class='altrow stats'>
+											<ul>
+												<li>588 Тем</li>
+												<li>13 874 Ответов</li>
+											</ul>
+										</td>
+										<td>
+											<ul class='last_post'>
+												<li><a href='http://zooforum.ru/index.php?showtopic=51760&amp;view=getlastpost' title='Просмотр последнего сообщения'><img src='http://zooforum.ru/public/style_images/master/last_post.png' alt='Иконка' title='Просмотр последнего сообщения' /></a> <a href='http://zooforum.ru/index.php?showtopic=51760&amp;view=getlastpost' title='Просмотр последнего сообщения'>13 Июль 2016 - 15:50</a></li>
+													<li><strong>Тема:</strong> <a href='http://zooforum.ru/index.php?showtopic=51760&amp;view=getnewpost' title='Перейти к первому непрочитанному сообщению: С Каши На Корм?'>С Каши На Корм?</a></li>
+													<li>
+														<strong>Автор:</strong> 
+														
+																<a href='http://zooforum.ru/index.php?showuser=68569' title='Просмотр профиля'>LolkaBalabolka</a> <a href='http://zooforum.ru/index.php?showuser=68569' class='__user __id68569' title='Просмотр профиля'><img src='http://zooforum.ru/public/style_images/master/user_popup.png' alt='Иконка' /></a>
+															
+													</li>
+											</ul>
+										</td>
+									</tr>
+							
+
+								<tr class='row2'>
+										<td class='altrow'>
+											<!-- SKINNOTE: this URL is wrong, needs updating -->
+											
+												<a id='forum_img_67' href="http://zooforum.ru/index.php?app=forums&amp;module=forums&amp;section=markasread&amp;marktype=forum&amp;forumid=67&amp;returntoforumid=0&amp;i=1" title="Пометить форум как прочтенный?" class='forum_marker'>
+													<img src='http://zooforum.ru/public/style_images/master/f_unread.png' alt='Не прочитанный форум' title='Отметить прочитанным ' />
+												</a>
+									
+												<script type='text/javascript'>
+													ipb.global.registerMarker( "forum_img_67", "f_unread", markerURL + "67" );
+												</script>
+											
+										</td>
+										<td>
+											<h4><a href="http://zooforum.ru/index.php?showforum=67" title='Перейти к форуму'>Общение любителей кошек</a></h4>
+											<p class='desc'>Общение любителей кошек</p>
+									
+											
+											<!-- Skinnote: Clean up queued stuff -->
+											
+										</td>
+										<td class='altrow stats'>
+											<ul>
+												<li>813 Тем</li>
+												<li>24 459 Ответов</li>
+											</ul>
+										</td>
+										<td>
+											<ul class='last_post'>
+												<li><a href='http://zooforum.ru/index.php?showtopic=56980&amp;view=getlastpost' title='Просмотр последнего сообщения'><img src='http://zooforum.ru/public/style_images/master/last_post.png' alt='Иконка' title='Просмотр последнего сообщения' /></a> <a href='http://zooforum.ru/index.php?showtopic=56980&amp;view=getlastpost' title='Просмотр последнего сообщения'>10 Октябрь 2016 - 08:27</a></li>
+													<li><strong>Тема:</strong> <a href='http://zooforum.ru/index.php?showtopic=56980&amp;view=getnewpost' title='Перейти к первому непрочитанному сообщению: Просьба Помочь Подобрать Корм'>Просьба Помочь Подобрать Корм</a></li>
+													<li>
+														<strong>Автор:</strong> 
+														
+																<a href='http://zooforum.ru/index.php?showuser=61980' title='Просмотр профиля'>Abrysova</a> <a href='http://zooforum.ru/index.php?showuser=61980' class='__user __id61980' title='Просмотр профиля'><img src='http://zooforum.ru/public/style_images/master/user_popup.png' alt='Иконка' /></a>
+															
+													</li>
+											</ul>
+										</td>
+									</tr>
+							
+
+								<tr class='row1'>
+										<td class='altrow'>
+											<!-- SKINNOTE: this URL is wrong, needs updating -->
+											
+												<a id='forum_img_119' href="http://zooforum.ru/index.php?app=forums&amp;module=forums&amp;section=markasread&amp;marktype=forum&amp;forumid=119&amp;returntoforumid=0&amp;i=1" title="Пометить форум как прочтенный?" class='forum_marker'>
+													<img src='http://zooforum.ru/public/style_images/master/f_unread.png' alt='Не прочитанный форум' title='Отметить прочитанным ' />
+												</a>
+									
+												<script type='text/javascript'>
+													ipb.global.registerMarker( "forum_img_119", "f_unread", markerURL + "119" );
+												</script>
+											
+										</td>
+										<td>
+											<h4><a href="http://zooforum.ru/index.php?showforum=119" title='Перейти к форуму'>Общение владельцев Птиц</a></h4>
+											<p class='desc'>Общение владельцев Птиц</p>
+									
+											
+											<!-- Skinnote: Clean up queued stuff -->
+											
+										</td>
+										<td class='altrow stats'>
+											<ul>
+												<li>17 Тем</li>
+												<li>9 Ответов</li>
+											</ul>
+										</td>
+										<td>
+											<ul class='last_post'>
+												<li><a href='http://zooforum.ru/index.php?showtopic=53124&amp;view=getlastpost' title='Просмотр последнего сообщения'><img src='http://zooforum.ru/public/style_images/master/last_post.png' alt='Иконка' title='Просмотр последнего сообщения' /></a> <a href='http://zooforum.ru/index.php?showtopic=53124&amp;view=getlastpost' title='Просмотр последнего сообщения'>05 Апрель 2016 - 00:49</a></li>
+													<li><strong>Тема:</strong> <a href='http://zooforum.ru/index.php?showtopic=53124&amp;view=getnewpost' title='Перейти к первому непрочитанному сообщению: Страдает Попугай Помогите'>Страдает Попугай Помогите</a></li>
+													<li>
+														<strong>Автор:</strong> 
+														
+																<a href='http://zooforum.ru/index.php?showuser=67739' title='Просмотр профиля'>mangelo</a> <a href='http://zooforum.ru/index.php?showuser=67739' class='__user __id67739' title='Просмотр профиля'><img src='http://zooforum.ru/public/style_images/master/user_popup.png' alt='Иконка' /></a>
+															
+													</li>
+											</ul>
+										</td>
+									</tr>
+							
+
+								<tr class='row2'>
+										<td class='altrow'>
+											<!-- SKINNOTE: this URL is wrong, needs updating -->
+											
+												<a id='forum_img_120' href="http://zooforum.ru/index.php?app=forums&amp;module=forums&amp;section=markasread&amp;marktype=forum&amp;forumid=120&amp;returntoforumid=0&amp;i=1" title="Пометить форум как прочтенный?" class='forum_marker'>
+													<img src='http://zooforum.ru/public/style_images/master/f_unread.png' alt='Не прочитанный форум' title='Отметить прочитанным ' />
+												</a>
+									
+												<script type='text/javascript'>
+													ipb.global.registerMarker( "forum_img_120", "f_unread", markerURL + "120" );
+												</script>
+											
+										</td>
+										<td>
+											<h4><a href="http://zooforum.ru/index.php?showforum=120" title='Перейти к форуму'>Общение владельцев Грызунов</a></h4>
+											<p class='desc'>Общение владельцев мышек, крысок, белочек, шиншилл, кроликов и прочих зубастиков</p>
+									
+											
+											<!-- Skinnote: Clean up queued stuff -->
+											
+										</td>
+										<td class='altrow stats'>
+											<ul>
+												<li>112 Тем</li>
+												<li>99 Ответов</li>
+											</ul>
+										</td>
+										<td>
+											<ul class='last_post'>
+												<li><a href='http://zooforum.ru/index.php?showtopic=56931&amp;view=getlastpost' title='Просмотр последнего сообщения'><img src='http://zooforum.ru/public/style_images/master/last_post.png' alt='Иконка' title='Просмотр последнего сообщения' /></a> <a href='http://zooforum.ru/index.php?showtopic=56931&amp;view=getlastpost' title='Просмотр последнего сообщения'>28 Июль 2016 - 20:25</a></li>
+													<li><strong>Тема:</strong> <a href='http://zooforum.ru/index.php?showtopic=56931&amp;view=getnewpost' title='Перейти к первому непрочитанному сообщению: Смыв С Глаза (Шуша)'>Смыв С Глаза (Шуша)</a></li>
+													<li>
+														<strong>Автор:</strong> 
+														
+																<a href='http://zooforum.ru/index.php?showuser=68712' title='Просмотр профиля'>Shera</a> <a href='http://zooforum.ru/index.php?showuser=68712' class='__user __id68712' title='Просмотр профиля'><img src='http://zooforum.ru/public/style_images/master/user_popup.png' alt='Иконка' /></a>
+															
+													</li>
+											</ul>
+										</td>
+									</tr>
+							
+
+								<tr class='row1'>
+										<td class='altrow'>
+											<!-- SKINNOTE: this URL is wrong, needs updating -->
+											
+												<a id='forum_img_121' href="http://zooforum.ru/index.php?app=forums&amp;module=forums&amp;section=markasread&amp;marktype=forum&amp;forumid=121&amp;returntoforumid=0&amp;i=1" title="Пометить форум как прочтенный?" class='forum_marker'>
+													<img src='http://zooforum.ru/public/style_images/master/f_unread.png' alt='Не прочитанный форум' title='Отметить прочитанным ' />
+												</a>
+									
+												<script type='text/javascript'>
+													ipb.global.registerMarker( "forum_img_121", "f_unread", markerURL + "121" );
+												</script>
+											
+										</td>
+										<td>
+											<h4><a href="http://zooforum.ru/index.php?showforum=121" title='Перейти к форуму'>Террариум и Серпентарий</a></h4>
+											<p class='desc'>Общение владельцев Рептилий,Земноводных,Пресмыкающихся и прочей не млекопитающей живности. В том числе Букашки-Таракашки.</p>
+									
+											
+											<!-- Skinnote: Clean up queued stuff -->
+											
+										</td>
+										<td class='altrow stats'>
+											<ul>
+												<li>9 Тем</li>
+												<li>10 Ответов</li>
+											</ul>
+										</td>
+										<td>
+											<ul class='last_post'>
+												<li><a href='http://zooforum.ru/index.php?showtopic=56680&amp;view=getlastpost' title='Просмотр последнего сообщения'><img src='http://zooforum.ru/public/style_images/master/last_post.png' alt='Иконка' title='Просмотр последнего сообщения' /></a> <a href='http://zooforum.ru/index.php?showtopic=56680&amp;view=getlastpost' title='Просмотр последнего сообщения'>13 Апрель 2016 - 00:42</a></li>
+													<li><strong>Тема:</strong> <a href='http://zooforum.ru/index.php?showtopic=56680&amp;view=getnewpost' title='Перейти к первому непрочитанному сообщению: Хозяева Таких Странных И Таких Холодных Питомцев'>Хозяева Таких Странных И Та...</a></li>
+													<li>
+														<strong>Автор:</strong> 
+														
+																<a href='http://zooforum.ru/index.php?showuser=67739' title='Просмотр профиля'>mangelo</a> <a href='http://zooforum.ru/index.php?showuser=67739' class='__user __id67739' title='Просмотр профиля'><img src='http://zooforum.ru/public/style_images/master/user_popup.png' alt='Иконка' /></a>
+															
+													</li>
+											</ul>
+										</td>
+									</tr>
+							
+
+								<tr class='row2'>
+										<td class='altrow'>
+											<!-- SKINNOTE: this URL is wrong, needs updating -->
+											
+												<a id='forum_img_81' href="http://zooforum.ru/index.php?app=forums&amp;module=forums&amp;section=markasread&amp;marktype=forum&amp;forumid=81&amp;returntoforumid=0&amp;i=1" title="Пометить форум как прочтенный?" class='forum_marker'>
+													<img src='http://zooforum.ru/public/style_images/master/f_unread.png' alt='Не прочитанный форум' title='Отметить прочитанным ' />
+												</a>
+									
+												<script type='text/javascript'>
+													ipb.global.registerMarker( "forum_img_81", "f_unread", markerURL + "81" );
+												</script>
+											
+										</td>
+										<td>
+											<h4><a href="http://zooforum.ru/index.php?showforum=81" title='Перейти к форуму'>Счастливые истории</a></h4>
+											<p class='desc'>О хороших людях и счастливых животных</p>
+									
+											
+											<!-- Skinnote: Clean up queued stuff -->
+											
+										</td>
+										<td class='altrow stats'>
+											<ul>
+												<li>110 Тем</li>
+												<li>4 003 Ответов</li>
+											</ul>
+										</td>
+										<td>
+											<ul class='last_post'>
+												<li><a href='http://zooforum.ru/index.php?showtopic=56838&amp;view=getlastpost' title='Просмотр последнего сообщения'><img src='http://zooforum.ru/public/style_images/master/last_post.png' alt='Иконка' title='Просмотр последнего сообщения' /></a> <a href='http://zooforum.ru/index.php?showtopic=56838&amp;view=getlastpost' title='Просмотр последнего сообщения'>14 Сентябрь 2016 - 18:57</a></li>
+													<li><strong>Тема:</strong> <a href='http://zooforum.ru/index.php?showtopic=56838&amp;view=getnewpost' title='Перейти к первому непрочитанному сообщению: Шикарный Британец В Добрые Руки'>Шикарный Британец В Добрые ...</a></li>
+													<li>
+														<strong>Автор:</strong> 
+														
+																<a href='http://zooforum.ru/index.php?showuser=13364' title='Просмотр профиля'>altena</a> <a href='http://zooforum.ru/index.php?showuser=13364' class='__user __id13364' title='Просмотр профиля'><img src='http://zooforum.ru/public/style_images/master/user_popup.png' alt='Иконка' /></a>
+															
+													</li>
+											</ul>
+										</td>
+									</tr>
+							
+
+								<tr class='row1'>
+										<td class='altrow'>
+											<!-- SKINNOTE: this URL is wrong, needs updating -->
+											
+												<a id='forum_img_65' href="http://zooforum.ru/index.php?app=forums&amp;module=forums&amp;section=markasread&amp;marktype=forum&amp;forumid=65&amp;returntoforumid=0&amp;i=1" title="Пометить форум как прочтенный?" class='forum_marker'>
+													<img src='http://zooforum.ru/public/style_images/master/f_unread.png' alt='Не прочитанный форум' title='Отметить прочитанным ' />
+												</a>
+									
+												<script type='text/javascript'>
+													ipb.global.registerMarker( "forum_img_65", "f_unread", markerURL + "65" );
+												</script>
+											
+										</td>
+										<td>
+											<h4><a href="http://zooforum.ru/index.php?showforum=65" title='Перейти к форуму'>Уход за пожилыми животными</a></h4>
+											<p class='desc'>лечение, уход, кормление и тд</p>
+									
+											
+											<!-- Skinnote: Clean up queued stuff -->
+											
+										</td>
+										<td class='altrow stats'>
+											<ul>
+												<li>51 Тем</li>
+												<li>329 Ответов</li>
+											</ul>
+										</td>
+										<td>
+											<ul class='last_post'>
+												<li><a href='http://zooforum.ru/index.php?showtopic=38381&amp;view=getlastpost' title='Просмотр последнего сообщения'><img src='http://zooforum.ru/public/style_images/master/last_post.png' alt='Иконка' title='Просмотр последнего сообщения' /></a> <a href='http://zooforum.ru/index.php?showtopic=38381&amp;view=getlastpost' title='Просмотр последнего сообщения'>14 Декабрь 2015 - 13:39</a></li>
+													<li><strong>Тема:</strong> <a href='http://zooforum.ru/index.php?showtopic=38381&amp;view=getnewpost' title='Перейти к первому непрочитанному сообщению: Кошка. Уход за когтями'>Кошка. Уход за когтями</a></li>
+													<li>
+														<strong>Автор:</strong> 
+														
+																<a href='http://zooforum.ru/index.php?showuser=66043' title='Просмотр профиля'>lastname</a> <a href='http://zooforum.ru/index.php?showuser=66043' class='__user __id66043' title='Просмотр профиля'><img src='http://zooforum.ru/public/style_images/master/user_popup.png' alt='Иконка' /></a>
+															
+													</li>
+											</ul>
+										</td>
+									</tr>
+							
+
+								<tr class='row2'>
+										<td class='altrow'>
+											<!-- SKINNOTE: this URL is wrong, needs updating -->
+											
+												<a id='forum_img_75' href="http://zooforum.ru/index.php?app=forums&amp;module=forums&amp;section=markasread&amp;marktype=forum&amp;forumid=75&amp;returntoforumid=0&amp;i=1" title="Пометить форум как прочтенный?" class='forum_marker'>
+													<img src='http://zooforum.ru/public/style_images/master/f_unread.png' alt='Не прочитанный форум' title='Отметить прочитанным ' />
+												</a>
+									
+												<script type='text/javascript'>
+													ipb.global.registerMarker( "forum_img_75", "f_unread", markerURL + "75" );
+												</script>
+											
+										</td>
+										<td>
+											<h4><a href="http://zooforum.ru/index.php?showforum=75" title='Перейти к форуму'>Куда пойти лечиться</a></h4>
+											<p class='desc'>Отзывы о ветеринарных клиниках в разных городах.</p>
+									
+											
+											<!-- Skinnote: Clean up queued stuff -->
+											
+										</td>
+										<td class='altrow stats'>
+											<ul>
+												<li>233 Тем</li>
+												<li>1 453 Ответов</li>
+											</ul>
+										</td>
+										<td>
+											<ul class='last_post'>
+												<li><a href='http://zooforum.ru/index.php?showtopic=57010&amp;view=getlastpost' title='Просмотр последнего сообщения'><img src='http://zooforum.ru/public/style_images/master/last_post.png' alt='Иконка' title='Просмотр последнего сообщения' /></a> <a href='http://zooforum.ru/index.php?showtopic=57010&amp;view=getlastpost' title='Просмотр последнего сообщения'>30 Сентябрь 2016 - 18:46</a></li>
+													<li><strong>Тема:</strong> <a href='http://zooforum.ru/index.php?showtopic=57010&amp;view=getnewpost' title='Перейти к первому непрочитанному сообщению: Москва&#33; Домаев Дмитрий Александрович'>Москва! Домаев Дмитрий Алек...</a></li>
+													<li>
+														<strong>Автор:</strong> 
+														
+																<a href='http://zooforum.ru/index.php?showuser=61588' title='Просмотр профиля'>zhenka06</a> <a href='http://zooforum.ru/index.php?showuser=61588' class='__user __id61588' title='Просмотр профиля'><img src='http://zooforum.ru/public/style_images/master/user_popup.png' alt='Иконка' /></a>
+															
+													</li>
+											</ul>
+										</td>
+									</tr>
+							
+
+								<tr class='row1'>
+										<td class='altrow'>
+											<!-- SKINNOTE: this URL is wrong, needs updating -->
+											
+												<a id='forum_img_82' href="http://zooforum.ru/index.php?app=forums&amp;module=forums&amp;section=markasread&amp;marktype=forum&amp;forumid=82&amp;returntoforumid=0&amp;i=1" title="Пометить форум как прочтенный?" class='forum_marker'>
+													<img src='http://zooforum.ru/public/style_images/master/f_unread.png' alt='Не прочитанный форум' title='Отметить прочитанным ' />
+												</a>
+									
+												<script type='text/javascript'>
+													ipb.global.registerMarker( "forum_img_82", "f_unread", markerURL + "82" );
+												</script>
+											
+										</td>
+										<td>
+											<h4><a href="http://zooforum.ru/index.php?showforum=82" title='Перейти к форуму'>ZOO-ясли</a></h4>
+											<p class='desc'>У вас появился малыш! Первые советы и рекомендации. Выбор, уход, воспитание.</p>
+									
+											
+											<!-- Skinnote: Clean up queued stuff -->
+											
+										</td>
+										<td class='altrow stats'>
+											<ul>
+												<li>174 Тем</li>
+												<li>1 809 Ответов</li>
+											</ul>
+										</td>
+										<td>
+											<ul class='last_post'>
+												<li><a href='http://zooforum.ru/index.php?showtopic=56987&amp;view=getlastpost' title='Просмотр последнего сообщения'><img src='http://zooforum.ru/public/style_images/master/last_post.png' alt='Иконка' title='Просмотр последнего сообщения' /></a> <a href='http://zooforum.ru/index.php?showtopic=56987&amp;view=getlastpost' title='Просмотр последнего сообщения'>09 Сентябрь 2016 - 20:09</a></li>
+													<li><strong>Тема:</strong> <a href='http://zooforum.ru/index.php?showtopic=56987&amp;view=getnewpost' title='Перейти к первому непрочитанному сообщению: С Чего Начать?'>С Чего Начать?</a></li>
+													<li>
+														<strong>Автор:</strong> 
+														
+																<a href='http://zooforum.ru/index.php?showuser=67110' title='Просмотр профиля'>pantera1387</a> <a href='http://zooforum.ru/index.php?showuser=67110' class='__user __id67110' title='Просмотр профиля'><img src='http://zooforum.ru/public/style_images/master/user_popup.png' alt='Иконка' /></a>
+															
+													</li>
+											</ul>
+										</td>
+									</tr>
+							
+
+								<tr class='row2'>
+										<td class='altrow'>
+											<!-- SKINNOTE: this URL is wrong, needs updating -->
+											
+												<a id='forum_img_79' href="http://zooforum.ru/index.php?app=forums&amp;module=forums&amp;section=markasread&amp;marktype=forum&amp;forumid=79&amp;returntoforumid=0&amp;i=1" title="Пометить форум как прочтенный?" class='forum_marker'>
+													<img src='http://zooforum.ru/public/style_images/master/f_unread.png' alt='Не прочитанный форум' title='Отметить прочитанным ' />
+												</a>
+									
+												<script type='text/javascript'>
+													ipb.global.registerMarker( "forum_img_79", "f_unread", markerURL + "79" );
+												</script>
+											
+										</td>
+										<td>
+											<h4><a href="http://zooforum.ru/index.php?showforum=79" title='Перейти к форуму'>Утрата любимцев</a></h4>
+											<p class='desc'>Психологические проблемы хозяев, потерявших своих питомцев</p>
+									
+											
+											<!-- Skinnote: Clean up queued stuff -->
+											
+										</td>
+										<td class='altrow stats'>
+											<ul>
+												<li>487 Тем</li>
+												<li>11 555 Ответов</li>
+											</ul>
+										</td>
+										<td>
+											<ul class='last_post'>
+												<li><a href='http://zooforum.ru/index.php?showtopic=6910&amp;view=getlastpost' title='Просмотр последнего сообщения'><img src='http://zooforum.ru/public/style_images/master/last_post.png' alt='Иконка' title='Просмотр последнего сообщения' /></a> <a href='http://zooforum.ru/index.php?showtopic=6910&amp;view=getlastpost' title='Просмотр последнего сообщения'>04 Август 2016 - 16:06</a></li>
+													<li><strong>Тема:</strong> <a href='http://zooforum.ru/index.php?showtopic=6910&amp;view=getnewpost' title='Перейти к первому непрочитанному сообщению: Мост Радуги'>Мост Радуги</a></li>
+													<li>
+														<strong>Автор:</strong> 
+														
+																<a href='http://zooforum.ru/index.php?showuser=57790' title='Просмотр профиля'>dmitryden</a> <a href='http://zooforum.ru/index.php?showuser=57790' class='__user __id57790' title='Просмотр профиля'><img src='http://zooforum.ru/public/style_images/master/user_popup.png' alt='Иконка' /></a>
+															
+													</li>
+											</ul>
+										</td>
+									</tr>
+							
+
+								<tr class='row1'>
+										<td class='altrow'>
+											<!-- SKINNOTE: this URL is wrong, needs updating -->
+											
+												<a id='forum_img_80' href="http://zooforum.ru/index.php?app=forums&amp;module=forums&amp;section=markasread&amp;marktype=forum&amp;forumid=80&amp;returntoforumid=0&amp;i=1" title="Пометить форум как прочтенный?" class='forum_marker'>
+													<img src='http://zooforum.ru/public/style_images/master/f_unread.png' alt='Не прочитанный форум' title='Отметить прочитанным ' />
+												</a>
+									
+												<script type='text/javascript'>
+													ipb.global.registerMarker( "forum_img_80", "f_unread", markerURL + "80" );
+												</script>
+											
+										</td>
+										<td>
+											<h4><a href="http://zooforum.ru/index.php?showforum=80" title='Перейти к форуму'>Конкурсы</a></h4>
+											<p class='desc'>Фотоконкурсы,  чтобы получить моральное удовлетворение.<br />Призов не предвидится. Может спонсора кто найдет?</p>
+									
+											
+											<!-- Skinnote: Clean up queued stuff -->
+											
+										</td>
+										<td class='altrow stats'>
+											<ul>
+												<li>41 Тем</li>
+												<li>713 Ответов</li>
+											</ul>
+										</td>
+										<td>
+											<ul class='last_post'>
+												<li><a href='http://zooforum.ru/index.php?showtopic=47927&amp;view=getlastpost' title='Просмотр последнего сообщения'><img src='http://zooforum.ru/public/style_images/master/last_post.png' alt='Иконка' title='Просмотр последнего сообщения' /></a> <a href='http://zooforum.ru/index.php?showtopic=47927&amp;view=getlastpost' title='Просмотр последнего сообщения'>22 Декабрь 2014 - 15:36</a></li>
+													<li><strong>Тема:</strong> <a href='http://zooforum.ru/index.php?showtopic=47927&amp;view=getnewpost' title='Перейти к первому непрочитанному сообщению: Отрывки Из Жизни Наших Любимцев'>Отрывки Из Жизни Наших Люби...</a></li>
+													<li>
+														<strong>Автор:</strong> 
+														
+																<a href='http://zooforum.ru/index.php?showuser=62623' title='Просмотр профиля'>Kerri</a> <a href='http://zooforum.ru/index.php?showuser=62623' class='__user __id62623' title='Просмотр профиля'><img src='http://zooforum.ru/public/style_images/master/user_popup.png' alt='Иконка' /></a>
+															
+													</li>
+											</ul>
+										</td>
+									</tr>
+							
+
+								<tr class='row2'>
+										<td class='altrow'>
+											<!-- SKINNOTE: this URL is wrong, needs updating -->
+											
+												<a id='forum_img_110' href="http://zooforum.ru/index.php?app=forums&amp;module=forums&amp;section=markasread&amp;marktype=forum&amp;forumid=110&amp;returntoforumid=0&amp;i=1" title="Пометить форум как прочтенный?" class='forum_marker'>
+													<img src='http://zooforum.ru/public/style_images/master/f_unread.png' alt='Не прочитанный форум' title='Отметить прочитанным ' />
+												</a>
+									
+												<script type='text/javascript'>
+													ipb.global.registerMarker( "forum_img_110", "f_unread", markerURL + "110" );
+												</script>
+											
+										</td>
+										<td>
+											<h4><a href="http://zooforum.ru/index.php?showforum=110" title='Перейти к форуму'>Работа</a></h4>
+											<p class='desc'>Поиск и предложене работы в области ветеринарии и зообизнеса</p>
+									
+											
+											<!-- Skinnote: Clean up queued stuff -->
+											
+										</td>
+										<td class='altrow stats'>
+											<ul>
+												<li>86 Тем</li>
+												<li>72 Ответов</li>
+											</ul>
+										</td>
+										<td>
+											<ul class='last_post'>
+												<li><a href='http://zooforum.ru/index.php?showtopic=56400&amp;view=getlastpost' title='Просмотр последнего сообщения'><img src='http://zooforum.ru/public/style_images/master/last_post.png' alt='Иконка' title='Просмотр последнего сообщения' /></a> <a href='http://zooforum.ru/index.php?showtopic=56400&amp;view=getlastpost' title='Просмотр последнего сообщения'>08 Февраль 2016 - 01:15</a></li>
+													<li><strong>Тема:</strong> <a href='http://zooforum.ru/index.php?showtopic=56400&amp;view=getnewpost' title='Перейти к первому непрочитанному сообщению: Ищем Ассистента Ветеринарног Врача'>Ищем Ассистента Ветеринарно...</a></li>
+													<li>
+														<strong>Автор:</strong> 
+														
+																<a href='http://zooforum.ru/index.php?showuser=67088' title='Просмотр профиля'>Шипка</a> <a href='http://zooforum.ru/index.php?showuser=67088' class='__user __id67088' title='Просмотр профиля'><img src='http://zooforum.ru/public/style_images/master/user_popup.png' alt='Иконка' /></a>
+															
+													</li>
+											</ul>
+										</td>
+									</tr>
+							
+
+								<tr class='row1'>
+										<td class='altrow'>
+											<!-- SKINNOTE: this URL is wrong, needs updating -->
+											
+												<a id='forum_img_109' href="http://zooforum.ru/index.php?app=forums&amp;module=forums&amp;section=markasread&amp;marktype=forum&amp;forumid=109&amp;returntoforumid=0&amp;i=1" title="Пометить форум как прочтенный?" class='forum_marker'>
+													<img src='http://zooforum.ru/public/style_images/master/f_unread.png' alt='Не прочитанный форум' title='Отметить прочитанным ' />
+												</a>
+									
+												<script type='text/javascript'>
+													ipb.global.registerMarker( "forum_img_109", "f_unread", markerURL + "109" );
+												</script>
+											
+										</td>
+										<td>
+											<h4><a href="http://zooforum.ru/index.php?showforum=109" title='Перейти к форуму'>Зообизнес</a></h4>
+											<p class='desc'>Вопросы связанные с торговлей зоотоварама. Реализация и поставки.</p>
+									
+											
+											<!-- Skinnote: Clean up queued stuff -->
+											
+										</td>
+										<td class='altrow stats'>
+											<ul>
+												<li>8 Тем</li>
+												<li>25 Ответов</li>
+											</ul>
+										</td>
+										<td>
+											<ul class='last_post'>
+												<li><a href='http://zooforum.ru/index.php?showtopic=56425&amp;view=getlastpost' title='Просмотр последнего сообщения'><img src='http://zooforum.ru/public/style_images/master/last_post.png' alt='Иконка' title='Просмотр последнего сообщения' /></a> <a href='http://zooforum.ru/index.php?showtopic=56425&amp;view=getlastpost' title='Просмотр последнего сообщения'>10 Февраль 2016 - 22:25</a></li>
+													<li><strong>Тема:</strong> <a href='http://zooforum.ru/index.php?showtopic=56425&amp;view=getnewpost' title='Перейти к первому непрочитанному сообщению: Товары Для Животных От Зоомагазина Лапахвост'>Товары Для Животных От Зоом...</a></li>
+													<li>
+														<strong>Автор:</strong> 
+														
+																<a href='http://zooforum.ru/index.php?showuser=16118' title='Просмотр профиля'>Liberty</a> <a href='http://zooforum.ru/index.php?showuser=16118' class='__user __id16118' title='Просмотр профиля'><img src='http://zooforum.ru/public/style_images/master/user_popup.png' alt='Иконка' /></a>
+															
+													</li>
+											</ul>
+										</td>
+									</tr>
+							
+
+								<tr class='row2'>
+										<td class='altrow'>
+											<!-- SKINNOTE: this URL is wrong, needs updating -->
+											
+												<a id='forum_img_130' href="http://zooforum.ru/index.php?app=forums&amp;module=forums&amp;section=markasread&amp;marktype=forum&amp;forumid=130&amp;returntoforumid=0&amp;i=1" title="Пометить форум как прочтенный?" class='forum_marker'>
+													<img src='http://zooforum.ru/public/style_images/master/f_unread.png' alt='Не прочитанный форум' title='Отметить прочитанным ' />
+												</a>
+									
+												<script type='text/javascript'>
+													ipb.global.registerMarker( "forum_img_130", "f_unread", markerURL + "130" );
+												</script>
+											
+										</td>
+										<td>
+											<h4><a href="http://zooforum.ru/index.php?showforum=130" title='Перейти к форуму'>Поднимем настроение!</a></h4>
+											<p class='desc'></p>
+									
+											
+											<!-- Skinnote: Clean up queued stuff -->
+											
+										</td>
+										<td class='altrow stats'>
+											<ul>
+												<li>1 Тем</li>
+												<li>13 Ответов</li>
+											</ul>
+										</td>
+										<td>
+											<ul class='last_post'>
+												<li><a href='http://zooforum.ru/index.php?showtopic=55675&amp;view=getlastpost' title='Просмотр последнего сообщения'><img src='http://zooforum.ru/public/style_images/master/last_post.png' alt='Иконка' title='Просмотр последнего сообщения' /></a> <a href='http://zooforum.ru/index.php?showtopic=55675&amp;view=getlastpost' title='Просмотр последнего сообщения'>27 Май 2016 - 22:25</a></li>
+													<li><strong>Тема:</strong> <a href='http://zooforum.ru/index.php?showtopic=55675&amp;view=getnewpost' title='Перейти к первому непрочитанному сообщению: Немного Юмора'>Немного Юмора</a></li>
+													<li>
+														<strong>Автор:</strong> 
+														
+																<a href='http://zooforum.ru/index.php?showuser=67110' title='Просмотр профиля'>pantera1387</a> <a href='http://zooforum.ru/index.php?showuser=67110' class='__user __id67110' title='Просмотр профиля'><img src='http://zooforum.ru/public/style_images/master/user_popup.png' alt='Иконка' /></a>
+															
+													</li>
+											</ul>
+										</td>
+									</tr>
+							
+						</table>
+					</div>
+				
+			
+
+				
+										<div class='category_block block_wrap'>
+						<h3 id='category_77' class='maintitle'><a class='toggle right' href='#' title='Свернуть категорию'>Свернуть категорию</a> <a href="http://zooforum.ru/index.php?showforum=77" title='Просмотр категории'>Обьединение питомников pets4u.ru</a></h3>
+						<table class='ipb_table' summary="Форумы в категории 'Обьединение питомников pets4u.ru'">
+							<tr class='header'>
+								<th scope='col' class='col_c_icon'>&nbsp;</th>
+								<th scope='col' class='col_c_forum'>Форум</th>
+								<th scope='col' class='col_c_stats stats'>Статистика</th>
+								<th scope='col' class='col_c_post'>Последнее сообщение</th>
+							</tr>
+							<!-- / CAT HEADER -->
+							
+								<tr class='row1'>
+										<td class='altrow'>
+											<!-- SKINNOTE: this URL is wrong, needs updating -->
+											
+												<a id='forum_img_78' href="http://zooforum.ru/index.php?app=forums&amp;module=forums&amp;section=markasread&amp;marktype=forum&amp;forumid=78&amp;returntoforumid=0&amp;i=1" title="Пометить форум как прочтенный?" class='forum_marker'>
+													<img src='http://zooforum.ru/public/style_images/master/f_unread.png' alt='Не прочитанный форум' title='Отметить прочитанным ' />
+												</a>
+									
+												<script type='text/javascript'>
+													ipb.global.registerMarker( "forum_img_78", "f_unread", markerURL + "78" );
+												</script>
+											
+										</td>
+										<td>
+											<h4><a href="http://zooforum.ru/index.php?showforum=78" title='Перейти к форуму'>Обсуждение работы форума обьединения питомников</a></h4>
+											<p class='desc'>Каким должен быть ворум обьединения питомников?</p>
+									
+											
+											<!-- Skinnote: Clean up queued stuff -->
+											
+										</td>
+										<td class='altrow stats'>
+											<ul>
+												<li>13 Тем</li>
+												<li>162 Ответов</li>
+											</ul>
+										</td>
+										<td>
+											<ul class='last_post'>
+												<li><a href='http://zooforum.ru/index.php?showtopic=39837&amp;view=getlastpost' title='Просмотр последнего сообщения'><img src='http://zooforum.ru/public/style_images/master/last_post.png' alt='Иконка' title='Просмотр последнего сообщения' /></a> <a href='http://zooforum.ru/index.php?showtopic=39837&amp;view=getlastpost' title='Просмотр последнего сообщения'>22 Август 2015 - 17:25</a></li>
+													<li><strong>Тема:</strong> <a href='http://zooforum.ru/index.php?showtopic=39837&amp;view=getnewpost' title='Перейти к первому непрочитанному сообщению: Убийство Кошек От Питомника Анна-Мария Кэтс&#33;'>Убийство Кошек От Питомника...</a></li>
+													<li>
+														<strong>Автор:</strong> 
+														
+																<a href='http://zooforum.ru/index.php?showuser=13364' title='Просмотр профиля'>altena</a> <a href='http://zooforum.ru/index.php?showuser=13364' class='__user __id13364' title='Просмотр профиля'><img src='http://zooforum.ru/public/style_images/master/user_popup.png' alt='Иконка' /></a>
+															
+													</li>
+											</ul>
+										</td>
+									</tr>
+							
+
+								<tr class='row2'>
+										<td class='altrow'>
+											<!-- SKINNOTE: this URL is wrong, needs updating -->
+											
+												<a id='forum_img_87' href="http://zooforum.ru/index.php?app=forums&amp;module=forums&amp;section=markasread&amp;marktype=forum&amp;forumid=87&amp;returntoforumid=0&amp;i=1" title="Пометить форум как прочтенный?" class='forum_marker'>
+													<img src='http://zooforum.ru/public/style_images/master/f_cat_unread.png' alt='Не прочитанная категория' title='Отметить прочитанным ' />
+												</a>
+									
+												<script type='text/javascript'>
+													ipb.global.registerMarker( "forum_img_87", "f_cat_unread", markerURL + "87" );
+												</script>
+											
+										</td>
+										<td>
+											<h4><a href="http://zooforum.ru/index.php?showforum=87" title='Перейти к форуму'>Породная конференция</a></h4>
+											<p class='desc'></p>
+									
+											
+												<h5 class='hide'>Подфорумы:</h5>
+												<ol class='subforums'>
+												
+													<li class='newposts'><a href="http://zooforum.ru/index.php?showforum=88" title='Перейти к форуму'>ЧИТАТЬ ВСЕМ&#33;&#33;&#33;</a></li>
+												
+
+													<li class='newposts'><a href="http://zooforum.ru/index.php?showforum=91" title='Перейти к форуму'>Кавказская овчарка</a></li>
+												
+
+													<li><a href="http://zooforum.ru/index.php?showforum=92" title='Перейти к форуму'>Русская голубая</a></li>
+												
+
+													<li class='newposts'><a href="http://zooforum.ru/index.php?showforum=93" title='Перейти к форуму'>Американский стаффтерьер</a></li>
+												
+
+													<li class='newposts'><a href="http://zooforum.ru/index.php?showforum=94" title='Перейти к форуму'>Китайская хохлатая</a></li>
+												
+
+													<li class='newposts'><a href="http://zooforum.ru/index.php?showforum=95" title='Перейти к форуму'>Южноафриканский Бурбуль</a></li>
+												
+
+													<li class='newposts'><a href="http://zooforum.ru/index.php?showforum=96" title='Перейти к форуму'>Уиппет</a></li>
+												
+
+													<li class='newposts'><a href="http://zooforum.ru/index.php?showforum=97" title='Перейти к форуму'>Ротвейлер</a></li>
+												
+
+													<li class='newposts'><a href="http://zooforum.ru/index.php?showforum=98" title='Перейти к форуму'>Голден ретривер</a></li>
+												
+
+													<li class='newposts'><a href="http://zooforum.ru/index.php?showforum=99" title='Перейти к форуму'>Востоноевропейская овчарка</a></li>
+												
+
+													<li class='newposts'><a href="http://zooforum.ru/index.php?showforum=100" title='Перейти к форуму'>Японский хин</a></li>
+												
+
+													<li class='newposts'><a href="http://zooforum.ru/index.php?showforum=101" title='Перейти к форуму'>Хаски</a></li>
+												
+
+													<li class='newposts'><a href="http://zooforum.ru/index.php?showforum=102" title='Перейти к форуму'>Канадский сфинкс</a></li>
+												
+
+													<li class='newposts'><a href="http://zooforum.ru/index.php?showforum=115" title='Перейти к форуму'>Тайские кошки</a></li>
+												
+												</ol>
+											
+											<!-- Skinnote: Clean up queued stuff -->
+											
+										</td>
+										<td class='altrow stats'>
+											<ul>
+												<li>58 Тем</li>
+												<li>472 Ответов</li>
+											</ul>
+										</td>
+										<td>
+											<ul class='last_post'>
+												<li><a href='http://zooforum.ru/index.php?showtopic=11225&amp;view=getlastpost' title='Просмотр последнего сообщения'><img src='http://zooforum.ru/public/style_images/master/last_post.png' alt='Иконка' title='Просмотр последнего сообщения' /></a> <a href='http://zooforum.ru/index.php?showtopic=11225&amp;view=getlastpost' title='Просмотр последнего сообщения'>05 Июнь 2016 - 14:37</a></li>
+													<li><strong>Тема:</strong> <a href='http://zooforum.ru/index.php?showtopic=11225&amp;view=getnewpost' title='Перейти к первому непрочитанному сообщению: Стандарт породы.'>Стандарт породы.</a></li>
+													<li>
+														<strong>Автор:</strong> 
+														
+																<a href='http://zooforum.ru/index.php?showuser=67433' title='Просмотр профиля'>Ererem</a> <a href='http://zooforum.ru/index.php?showuser=67433' class='__user __id67433' title='Просмотр профиля'><img src='http://zooforum.ru/public/style_images/master/user_popup.png' alt='Иконка' /></a>
+															
+													</li>
+											</ul>
+										</td>
+									</tr>
+							
+
+								<tr class='row1'>
+										<td class='altrow'>
+											<!-- SKINNOTE: this URL is wrong, needs updating -->
+											
+												<a id='forum_img_83' href="http://zooforum.ru/index.php?app=forums&amp;module=forums&amp;section=markasread&amp;marktype=forum&amp;forumid=83&amp;returntoforumid=0&amp;i=1" title="Пометить форум как прочтенный?" class='forum_marker'>
+													<img src='http://zooforum.ru/public/style_images/master/f_unread.png' alt='Не прочитанный форум' title='Отметить прочитанным ' />
+												</a>
+									
+												<script type='text/javascript'>
+													ipb.global.registerMarker( "forum_img_83", "f_unread", markerURL + "83" );
+												</script>
+											
+										</td>
+										<td>
+											<h4><a href="http://zooforum.ru/index.php?showforum=83" title='Перейти к форуму'>Выставки</a></h4>
+											<p class='desc'>Анонсы, даты проведения, координаты, условия и результаты</p>
+									
+											
+											<!-- Skinnote: Clean up queued stuff -->
+											
+										</td>
+										<td class='altrow stats'>
+											<ul>
+												<li>141 Тем</li>
+												<li>149 Ответов</li>
+											</ul>
+										</td>
+										<td>
+											<ul class='last_post'>
+												<li><a href='http://zooforum.ru/index.php?showtopic=56947&amp;view=getlastpost' title='Просмотр последнего сообщения'><img src='http://zooforum.ru/public/style_images/master/last_post.png' alt='Иконка' title='Просмотр последнего сообщения' /></a> <a href='http://zooforum.ru/index.php?showtopic=56947&amp;view=getlastpost' title='Просмотр последнего сообщения'>19 Август 2016 - 03:00</a></li>
+													<li><strong>Тема:</strong> <a href='http://zooforum.ru/index.php?showtopic=56947&amp;view=getnewpost' title='Перейти к первому непрочитанному сообщению: Поездка На 6 Cacib Грузия, Рамения, Азербайджан'>Поездка На 6 Cacib Грузия, ...</a></li>
+													<li>
+														<strong>Автор:</strong> 
+														
+																<a href='http://zooforum.ru/index.php?showuser=49079' title='Просмотр профиля'>Dulya</a> <a href='http://zooforum.ru/index.php?showuser=49079' class='__user __id49079' title='Просмотр профиля'><img src='http://zooforum.ru/public/style_images/master/user_popup.png' alt='Иконка' /></a>
+															
+													</li>
+											</ul>
+										</td>
+									</tr>
+							
+
+								<tr class='row2'>
+										<td class='altrow'>
+											<!-- SKINNOTE: this URL is wrong, needs updating -->
+											
+												<a id='forum_img_85' href="http://zooforum.ru/index.php?app=forums&amp;module=forums&amp;section=markasread&amp;marktype=forum&amp;forumid=85&amp;returntoforumid=0&amp;i=1" title="Пометить форум как прочтенный?" class='forum_marker'>
+													<img src='http://zooforum.ru/public/style_images/master/f_unread.png' alt='Не прочитанный форум' title='Отметить прочитанным ' />
+												</a>
+									
+												<script type='text/javascript'>
+													ipb.global.registerMarker( "forum_img_85", "f_unread", markerURL + "85" );
+												</script>
+											
+										</td>
+										<td>
+											<h4><a href="http://zooforum.ru/index.php?showforum=85" title='Перейти к форуму'>Эксперты, кинологи, судьи</a></h4>
+											<p class='desc'>Обсуждение экспертов и их профессиональной деятельности</p>
+									
+											
+											<!-- Skinnote: Clean up queued stuff -->
+											
+										</td>
+										<td class='altrow stats'>
+											<ul>
+												<li>4 Тем</li>
+												<li>55 Ответов</li>
+											</ul>
+										</td>
+										<td>
+											<ul class='last_post'>
+												<li><a href='http://zooforum.ru/index.php?showtopic=13747&amp;view=getlastpost' title='Просмотр последнего сообщения'><img src='http://zooforum.ru/public/style_images/master/last_post.png' alt='Иконка' title='Просмотр последнего сообщения' /></a> <a href='http://zooforum.ru/index.php?showtopic=13747&amp;view=getlastpost' title='Просмотр последнего сообщения'>19 Ноябрь 2015 - 16:09</a></li>
+													<li><strong>Тема:</strong> <a href='http://zooforum.ru/index.php?showtopic=13747&amp;view=getnewpost' title='Перейти к первому непрочитанному сообщению: Судьи, какие они?'>Судьи, какие они?</a></li>
+													<li>
+														<strong>Автор:</strong> 
+														
+																<a href='http://zooforum.ru/index.php?showuser=66461' title='Просмотр профиля'>gavana</a> <a href='http://zooforum.ru/index.php?showuser=66461' class='__user __id66461' title='Просмотр профиля'><img src='http://zooforum.ru/public/style_images/master/user_popup.png' alt='Иконка' /></a>
+															
+													</li>
+											</ul>
+										</td>
+									</tr>
+							
+
+								<tr class='row1'>
+										<td class='altrow'>
+											<!-- SKINNOTE: this URL is wrong, needs updating -->
+											
+												<a id='forum_img_86' href="http://zooforum.ru/index.php?app=forums&amp;module=forums&amp;section=markasread&amp;marktype=forum&amp;forumid=86&amp;returntoforumid=0&amp;i=1" title="Пометить форум как прочтенный?" class='forum_marker'>
+													<img src='http://zooforum.ru/public/style_images/master/f_unread.png' alt='Не прочитанный форум' title='Отметить прочитанным ' />
+												</a>
+									
+												<script type='text/javascript'>
+													ipb.global.registerMarker( "forum_img_86", "f_unread", markerURL + "86" );
+												</script>
+											
+										</td>
+										<td>
+											<h4><a href="http://zooforum.ru/index.php?showforum=86" title='Перейти к форуму'>Болтовня</a></h4>
+											<p class='desc'>Все обо всем</p>
+									
+											
+											<!-- Skinnote: Clean up queued stuff -->
+											
+										</td>
+										<td class='altrow stats'>
+											<ul>
+												<li>171 Тем</li>
+												<li>1 158 Ответов</li>
+											</ul>
+										</td>
+										<td>
+											<ul class='last_post'>
+												<li><a href='http://zooforum.ru/index.php?showtopic=38514&amp;view=getlastpost' title='Просмотр последнего сообщения'><img src='http://zooforum.ru/public/style_images/master/last_post.png' alt='Иконка' title='Просмотр последнего сообщения' /></a> <a href='http://zooforum.ru/index.php?showtopic=38514&amp;view=getlastpost' title='Просмотр последнего сообщения'>19 Август 2016 - 19:09</a></li>
+													<li><strong>Тема:</strong> <a href='http://zooforum.ru/index.php?showtopic=38514&amp;view=getnewpost' title='Перейти к первому непрочитанному сообщению: Факты из жизни кошек...'>Факты из жизни кошек...</a></li>
+													<li>
+														<strong>Автор:</strong> 
+														
+																<a href='http://zooforum.ru/index.php?showuser=67714' title='Просмотр профиля'>LudmilaV</a> <a href='http://zooforum.ru/index.php?showuser=67714' class='__user __id67714' title='Просмотр профиля'><img src='http://zooforum.ru/public/style_images/master/user_popup.png' alt='Иконка' /></a>
+															
+													</li>
+											</ul>
+										</td>
+									</tr>
+							
+
+								<tr class='row2'>
+										<td class='altrow'>
+											<!-- SKINNOTE: this URL is wrong, needs updating -->
+											
+												<a id='forum_img_89' href="http://zooforum.ru/index.php?app=forums&amp;module=forums&amp;section=markasread&amp;marktype=forum&amp;forumid=89&amp;returntoforumid=0&amp;i=1" title="Пометить форум как прочтенный?" class='forum_marker'>
+													<img src='http://zooforum.ru/public/style_images/master/f_unread.png' alt='Не прочитанный форум' title='Отметить прочитанным ' />
+												</a>
+									
+												<script type='text/javascript'>
+													ipb.global.registerMarker( "forum_img_89", "f_unread", markerURL + "89" );
+												</script>
+											
+										</td>
+										<td>
+											<h4><a href="http://zooforum.ru/index.php?showforum=89" title='Перейти к форуму'>Импорт, экспорт</a></h4>
+											<p class='desc'>Проблемы перевозки, пересылки. Таможня. перелет, оформление локументов. Поиск помощьников для пересылки</p>
+									
+											
+											<!-- Skinnote: Clean up queued stuff -->
+											
+										</td>
+										<td class='altrow stats'>
+											<ul>
+												<li>41 Тем</li>
+												<li>69 Ответов</li>
+											</ul>
+										</td>
+										<td>
+											<ul class='last_post'>
+												<li><a href='http://zooforum.ru/index.php?showtopic=52798&amp;view=getlastpost' title='Просмотр последнего сообщения'><img src='http://zooforum.ru/public/style_images/master/last_post.png' alt='Иконка' title='Просмотр последнего сообщения' /></a> <a href='http://zooforum.ru/index.php?showtopic=52798&amp;view=getlastpost' title='Просмотр последнего сообщения'>26 Октябрь 2015 - 19:01</a></li>
+													<li><strong>Тема:</strong> <a href='http://zooforum.ru/index.php?showtopic=52798&amp;view=getnewpost' title='Перейти к первому непрочитанному сообщению: Перевезти Собаку По России Самолетом'>Перевезти Собаку По России ...</a></li>
+													<li>
+														<strong>Автор:</strong> 
+														
+																<a href='http://zooforum.ru/index.php?showuser=65126' title='Просмотр профиля'>Koteyko</a> <a href='http://zooforum.ru/index.php?showuser=65126' class='__user __id65126' title='Просмотр профиля'><img src='http://zooforum.ru/public/style_images/master/user_popup.png' alt='Иконка' /></a>
+															
+													</li>
+											</ul>
+										</td>
+									</tr>
+							
+
+								<tr class='row1'>
+										<td class='altrow'>
+											<!-- SKINNOTE: this URL is wrong, needs updating -->
+											
+												<a id='forum_img_90' href="http://zooforum.ru/index.php?app=forums&amp;module=forums&amp;section=markasread&amp;marktype=forum&amp;forumid=90&amp;returntoforumid=0&amp;i=1" title="Пометить форум как прочтенный?" class='forum_marker'>
+													<img src='http://zooforum.ru/public/style_images/master/f_unread.png' alt='Не прочитанный форум' title='Отметить прочитанным ' />
+												</a>
+									
+												<script type='text/javascript'>
+													ipb.global.registerMarker( "forum_img_90", "f_unread", markerURL + "90" );
+												</script>
+											
+										</td>
+										<td>
+											<h4><a href="http://zooforum.ru/index.php?showforum=90" title='Перейти к форуму'>Реклама</a></h4>
+											<p class='desc'>Обсуждение способов рекламы животных. Рекламные места, их эффективность, аудитория.<br />
+Рекламные объявления публикуются после согласования с администрацией.</p>
+									
+											
+											<!-- Skinnote: Clean up queued stuff -->
+											
+										</td>
+										<td class='altrow stats'>
+											<ul>
+												<li>5 Тем</li>
+												<li>4 Ответов</li>
+											</ul>
+										</td>
+										<td>
+											<ul class='last_post'>
+												<li><a href='http://zooforum.ru/index.php?showtopic=38752&amp;view=getlastpost' title='Просмотр последнего сообщения'><img src='http://zooforum.ru/public/style_images/master/last_post.png' alt='Иконка' title='Просмотр последнего сообщения' /></a> <a href='http://zooforum.ru/index.php?showtopic=38752&amp;view=getlastpost' title='Просмотр последнего сообщения'>29 Декабрь 2010 - 13:26</a></li>
+													<li><strong>Тема:</strong> <a href='http://zooforum.ru/index.php?showtopic=38752&amp;view=getnewpost' title='Перейти к первому непрочитанному сообщению: Для вновь открывающегося зоомагазина ищу оптовых поставщиков'>Для вновь открывающегося зо...</a></li>
+													<li>
+														<strong>Автор:</strong> 
+														
+																<a href='http://zooforum.ru/index.php?showuser=37826' title='Просмотр профиля'>zoomagazin</a> <a href='http://zooforum.ru/index.php?showuser=37826' class='__user __id37826' title='Просмотр профиля'><img src='http://zooforum.ru/public/style_images/master/user_popup.png' alt='Иконка' /></a>
+															
+													</li>
+											</ul>
+										</td>
+									</tr>
+							
+						</table>
+					</div>
+				
+			
+
+				
+										<div class='category_block block_wrap'>
+						<h3 id='category_123' class='maintitle'><a class='toggle right' href='#' title='Свернуть категорию'>Свернуть категорию</a> <a href="http://zooforum.ru/index.php?showforum=123" title='Просмотр категории'>Библиотека</a></h3>
+						<table class='ipb_table' summary="Форумы в категории 'Библиотека'">
+							<tr class='header'>
+								<th scope='col' class='col_c_icon'>&nbsp;</th>
+								<th scope='col' class='col_c_forum'>Форум</th>
+								<th scope='col' class='col_c_stats stats'>Статистика</th>
+								<th scope='col' class='col_c_post'>Последнее сообщение</th>
+							</tr>
+							<!-- / CAT HEADER -->
+							
+								<tr class='row1'>
+										<td class='altrow'>
+											<!-- SKINNOTE: this URL is wrong, needs updating -->
+											
+												<a id='forum_img_124' href="http://zooforum.ru/index.php?app=forums&amp;module=forums&amp;section=markasread&amp;marktype=forum&amp;forumid=124&amp;returntoforumid=0&amp;i=1" title="Пометить форум как прочтенный?" class='forum_marker'>
+													<img src='http://zooforum.ru/public/style_images/master/f_unread.png' alt='Не прочитанный форум' title='Отметить прочитанным ' />
+												</a>
+									
+												<script type='text/javascript'>
+													ipb.global.registerMarker( "forum_img_124", "f_unread", markerURL + "124" );
+												</script>
+											
+										</td>
+										<td>
+											<h4><a href="http://zooforum.ru/index.php?showforum=124" title='Перейти к форуму'>Научный раздел</a></h4>
+											<p class='desc'>Раздел для специалистов</p>
+									
+											
+											<!-- Skinnote: Clean up queued stuff -->
+											
+										</td>
+										<td class='altrow stats'>
+											<ul>
+												<li>14 Тем</li>
+												<li>49 Ответов</li>
+											</ul>
+										</td>
+										<td>
+											<ul class='last_post'>
+												<li><a href='http://zooforum.ru/index.php?showtopic=52997&amp;view=getlastpost' title='Просмотр последнего сообщения'><img src='http://zooforum.ru/public/style_images/master/last_post.png' alt='Иконка' title='Просмотр последнего сообщения' /></a> <a href='http://zooforum.ru/index.php?showtopic=52997&amp;view=getlastpost' title='Просмотр последнего сообщения'>28 Февраль 2015 - 14:53</a></li>
+													<li><strong>Тема:</strong> <a href='http://zooforum.ru/index.php?showtopic=52997&amp;view=getnewpost' title='Перейти к первому непрочитанному сообщению: Стоматология'>Стоматология</a></li>
+													<li>
+														<strong>Автор:</strong> 
+														
+																<a href='http://zooforum.ru/index.php?showuser=13595' title='Просмотр профиля'>FTT</a> <a href='http://zooforum.ru/index.php?showuser=13595' class='__user __id13595' title='Просмотр профиля'><img src='http://zooforum.ru/public/style_images/master/user_popup.png' alt='Иконка' /></a>
+															
+													</li>
+											</ul>
+										</td>
+									</tr>
+							
+
+								<tr class='row2'>
+										<td class='altrow'>
+											<!-- SKINNOTE: this URL is wrong, needs updating -->
+											
+												<a id='forum_img_125' href="http://zooforum.ru/index.php?app=forums&amp;module=forums&amp;section=markasread&amp;marktype=forum&amp;forumid=125&amp;returntoforumid=0&amp;i=1" title="Пометить форум как прочтенный?" class='forum_marker'>
+													<img src='http://zooforum.ru/public/style_images/master/f_unread.png' alt='Не прочитанный форум' title='Отметить прочитанным ' />
+												</a>
+									
+												<script type='text/javascript'>
+													ipb.global.registerMarker( "forum_img_125", "f_unread", markerURL + "125" );
+												</script>
+											
+										</td>
+										<td>
+											<h4><a href="http://zooforum.ru/index.php?showforum=125" title='Перейти к форуму'>Периодика</a></h4>
+											<p class='desc'>Статьи, переводы</p>
+									
+											
+											<!-- Skinnote: Clean up queued stuff -->
+											
+										</td>
+										<td class='altrow stats'>
+											<ul>
+												<li>24 Тем</li>
+												<li>36 Ответов</li>
+											</ul>
+										</td>
+										<td>
+											<ul class='last_post'>
+												<li><a href='http://zooforum.ru/index.php?showtopic=52821&amp;view=getlastpost' title='Просмотр последнего сообщения'><img src='http://zooforum.ru/public/style_images/master/last_post.png' alt='Иконка' title='Просмотр последнего сообщения' /></a> <a href='http://zooforum.ru/index.php?showtopic=52821&amp;view=getlastpost' title='Просмотр последнего сообщения'>23 Июнь 2016 - 11:01</a></li>
+													<li><strong>Тема:</strong> <a href='http://zooforum.ru/index.php?showtopic=52821&amp;view=getnewpost' title='Перейти к первому непрочитанному сообщению: Чем Кормить Котенка?'>Чем Кормить Котенка?</a></li>
+													<li>
+														<strong>Автор:</strong> 
+														
+																<a href='http://zooforum.ru/index.php?showuser=13364' title='Просмотр профиля'>altena</a> <a href='http://zooforum.ru/index.php?showuser=13364' class='__user __id13364' title='Просмотр профиля'><img src='http://zooforum.ru/public/style_images/master/user_popup.png' alt='Иконка' /></a>
+															
+													</li>
+											</ul>
+										</td>
+									</tr>
+							
+
+								<tr class='row1'>
+										<td class='altrow'>
+											<!-- SKINNOTE: this URL is wrong, needs updating -->
+											
+												<a id='forum_img_126' href="http://zooforum.ru/index.php?app=forums&amp;module=forums&amp;section=markasread&amp;marktype=forum&amp;forumid=126&amp;returntoforumid=0&amp;i=1" title="Пометить форум как прочтенный?" class='forum_marker'>
+													<img src='http://zooforum.ru/public/style_images/master/f_unread.png' alt='Не прочитанный форум' title='Отметить прочитанным ' />
+												</a>
+									
+												<script type='text/javascript'>
+													ipb.global.registerMarker( "forum_img_126", "f_unread", markerURL + "126" );
+												</script>
+											
+										</td>
+										<td>
+											<h4><a href="http://zooforum.ru/index.php?showforum=126" title='Перейти к форуму'>Художественный</a></h4>
+											<p class='desc'>Раздел для обмена художественными произведениями </p>
+									
+											
+											<!-- Skinnote: Clean up queued stuff -->
+											
+										</td>
+										<td class='altrow stats'>
+											<ul>
+												<li>12 Тем</li>
+												<li>1 050 Ответов</li>
+											</ul>
+										</td>
+										<td>
+											<ul class='last_post'>
+												<li><a href='http://zooforum.ru/index.php?showtopic=27023&amp;view=getlastpost' title='Просмотр последнего сообщения'><img src='http://zooforum.ru/public/style_images/master/last_post.png' alt='Иконка' title='Просмотр последнего сообщения' /></a> <a href='http://zooforum.ru/index.php?showtopic=27023&amp;view=getlastpost' title='Просмотр последнего сообщения'>22 Май 2016 - 00:29</a></li>
+													<li><strong>Тема:</strong> <a href='http://zooforum.ru/index.php?showtopic=27023&amp;view=getnewpost' title='Перейти к первому непрочитанному сообщению: Наши любимые фильмы-мультфильмы о животных'>Наши любимые фильмы-мультфи...</a></li>
+													<li>
+														<strong>Автор:</strong> 
+														
+																<a href='http://zooforum.ru/index.php?showuser=68120' title='Просмотр профиля'>golodos</a> <a href='http://zooforum.ru/index.php?showuser=68120' class='__user __id68120' title='Просмотр профиля'><img src='http://zooforum.ru/public/style_images/master/user_popup.png' alt='Иконка' /></a>
+															
+													</li>
+											</ul>
+										</td>
+									</tr>
+							
+
+								<tr class='row2'>
+										<td class='altrow'>
+											<!-- SKINNOTE: this URL is wrong, needs updating -->
+											
+												<a id='forum_img_128' href="http://zooforum.ru/index.php?app=forums&amp;module=forums&amp;section=markasread&amp;marktype=forum&amp;forumid=128&amp;returntoforumid=0&amp;i=1" title="Пометить форум как прочтенный?" class='forum_marker'>
+													<img src='http://zooforum.ru/public/style_images/master/f_unread.png' alt='Не прочитанный форум' title='Отметить прочитанным ' />
+												</a>
+									
+												<script type='text/javascript'>
+													ipb.global.registerMarker( "forum_img_128", "f_unread", markerURL + "128" );
+												</script>
+											
+										</td>
+										<td>
+											<h4><a href="http://zooforum.ru/index.php?showforum=128" title='Перейти к форуму'>"Конгрессы, конференции, лекции для врачей, заводчиков и владельцев</a></h4>
+											<p class='desc'></p>
+									
+											
+											<!-- Skinnote: Clean up queued stuff -->
+											
+										</td>
+										<td class='altrow stats'>
+											<ul>
+												<li>23 Тем</li>
+												<li>22 Ответов</li>
+											</ul>
+										</td>
+										<td>
+											<ul class='last_post'>
+												<li><a href='http://zooforum.ru/index.php?showtopic=53278&amp;view=getlastpost' title='Просмотр последнего сообщения'><img src='http://zooforum.ru/public/style_images/master/last_post.png' alt='Иконка' title='Просмотр последнего сообщения' /></a> <a href='http://zooforum.ru/index.php?showtopic=53278&amp;view=getlastpost' title='Просмотр последнего сообщения'>08 Ноябрь 2014 - 13:24</a></li>
+													<li><strong>Тема:</strong> <a href='http://zooforum.ru/index.php?showtopic=53278&amp;view=getnewpost' title='Перейти к первому непрочитанному сообщению: Школа Ветеринарной Дерматологии'>Школа Ветеринарной Дерматол...</a></li>
+													<li>
+														<strong>Автор:</strong> 
+														
+																<a href='http://zooforum.ru/index.php?showuser=13595' title='Просмотр профиля'>FTT</a> <a href='http://zooforum.ru/index.php?showuser=13595' class='__user __id13595' title='Просмотр профиля'><img src='http://zooforum.ru/public/style_images/master/user_popup.png' alt='Иконка' /></a>
+															
+													</li>
+											</ul>
+										</td>
+									</tr>
+							
+
+								<tr class='row1'>
+										<td class='altrow'>
+											<!-- SKINNOTE: this URL is wrong, needs updating -->
+											
+												<a id='forum_img_129' href="http://zooforum.ru/index.php?app=forums&amp;module=forums&amp;section=markasread&amp;marktype=forum&amp;forumid=129&amp;returntoforumid=0&amp;i=1" title="Пометить форум как прочтенный?" class='forum_marker'>
+													<img src='http://zooforum.ru/public/style_images/master/f_unread.png' alt='Не прочитанный форум' title='Отметить прочитанным ' />
+												</a>
+									
+												<script type='text/javascript'>
+													ipb.global.registerMarker( "forum_img_129", "f_unread", markerURL + "129" );
+												</script>
+											
+										</td>
+										<td>
+											<h4><a href="http://zooforum.ru/index.php?showforum=129" title='Перейти к форуму'>Видеоматериалы</a></h4>
+											<p class='desc'></p>
+									
+											
+											<!-- Skinnote: Clean up queued stuff -->
+											
+										</td>
+										<td class='altrow stats'>
+											<ul>
+												<li>18 Тем</li>
+												<li>71 Ответов</li>
+											</ul>
+										</td>
+										<td>
+											<ul class='last_post'>
+												<li><a href='http://zooforum.ru/index.php?showtopic=53636&amp;view=getlastpost' title='Просмотр последнего сообщения'><img src='http://zooforum.ru/public/style_images/master/last_post.png' alt='Иконка' title='Просмотр последнего сообщения' /></a> <a href='http://zooforum.ru/index.php?showtopic=53636&amp;view=getlastpost' title='Просмотр последнего сообщения'>28 Февраль 2015 - 23:37</a></li>
+													<li><strong>Тема:</strong> <a href='http://zooforum.ru/index.php?showtopic=53636&amp;view=getnewpost' title='Перейти к первому непрочитанному сообщению: Клещи'>Клещи</a></li>
+													<li>
+														<strong>Автор:</strong> 
+														
+																<a href='http://zooforum.ru/index.php?showuser=13595' title='Просмотр профиля'>FTT</a> <a href='http://zooforum.ru/index.php?showuser=13595' class='__user __id13595' title='Просмотр профиля'><img src='http://zooforum.ru/public/style_images/master/user_popup.png' alt='Иконка' /></a>
+															
+													</li>
+											</ul>
+										</td>
+									</tr>
+							
+						</table>
+					</div>
+				
+			
+		
+	</div>
+</div>
+<ul id='stat_links' class='filter_bar rounded'>
+	<li><a href="http://zooforum.ru/index.php?app=core&amp;module=search&amp;do=active" title="Посмотреть сегодняшние популярные публикации">Активные темы</a></li>
+	<li><a href="http://zooforum.ru/index.php?app=forums&amp;module=extras&amp;section=stats&amp;do=leaders" title="Посмотреть администраторов и модераторов форума">Администрация</a></li>
+	<li><a href="http://zooforum.ru/index.php?app=forums&amp;module=extras&amp;section=stats" title="Посмотреть 20 активных сегодня пользователей">Активные сегодня</a></li>
+	<li><a href="http://zooforum.ru/index.php?app=members&amp;section=view&amp;module=list&amp;max_results=20&amp;sort_key=posts&amp;sort_order=desc&amp;filter=ALL" title="Посмотреть 20 самых активных пользователей">Самые активные</a></li>
+</ul>
+<div id='board_statistics' class='statistics general_box clearfix'>
+	
+		<div id='stats'>
+			<h2>Статистика форума</h2>
+			<dl> 
+				<dt>Сообщений</dt>
+				<dd>318 427</dd>
+				<dt>Пользователей</dt>
+				<dd>43 631</dd>
+				<dt>Новый участник</dt>
+				<dd><a href='http://zooforum.ru/index.php?showuser=69314' title='Просмотр профиля'>Kandynata</a> <a href='http://zooforum.ru/index.php?showuser=69314' class='__user __id69314' title='Просмотр профиля'><img src='http://zooforum.ru/public/style_images/master/user_popup.png' alt='Иконка' /></a>&nbsp;</dd>
+				<dt>Рекорд посещаемости</dt>
+				<dd>35 747<br /><span class='extra'>  02 Май 2016 - 09:28</span></dd>
+			</dl>
+		</div>
+	
+	<div id='active_users' class='stats_list'>
+			<h2>
+				3022 посетителей <span>(за последние 60 минут)</span><br />
+				<span class='desc'>1 пользователей, 3021 гостей, 0 скрытых пользователей | Полный список по: <a href='http://zooforum.ru/index.php?app=members&amp;module=online&amp;sort_order=desc'>последнему действию</a> или <a href='http://zooforum.ru/index.php?app=members&amp;module=online&amp;sort_key=name&amp;sort_order=asc&amp;show_mem=reg'>именам пользователей</a></span>
+			</h2>
+			
+				<p>
+					<span class='name'>Google,</span> <span class='name'><a href='http://zooforum.ru/index.php?showuser=25901' title='05:09 '><span style='color:orange'>iris_kiskis</span></a></span>					
+				</p>
+			
+		</div>
+	
+	
+	
+	
+</div>
+
+				<br class='clear' />
+			</div>
+			<div id='footer_utilities' class='clearfix clear rounded'>
+				<h2 class='hide'>Внешний вид</h2>
+				
+						<form action="http://zooforum.ru/index.php?act=idx" method="post" class='left'>
+							<fieldset>
+								<input type='hidden' name='k' value='880ea6a14ea49e853634fbdc5015a024' />
+								<label for='newSkin' class='hide'>Стиль:</label>
+								<select name="settingNewSkin" id='newSkin'>
+									
+<option id='skinSetDD_1' selected="selected" value="1">IP.Board</option>
+<option id='skinSetDD_3'  value="3">IP.Board Lo-Fi</option>
+								</select>
+								<input type='submit' value='ОК' class='input_submit alt' id='newSkinSubmit' />
+							</fieldset>
+						</form>
+					
+				<form action="http://zooforum.ru/index.php?act=idx" method="post" class='left'>
+					<fieldset>
+						<input type='hidden' name='k' value='880ea6a14ea49e853634fbdc5015a024' />
+						<input type='hidden' name='setlanguage' value='1' />
+						<input type="hidden" name="langurlbits" value="act=idx&amp;cal_id=" />
+						<label for='newLang' class='hide'>Язык:</label>
+						<select name="langid" id='newLang'>
+								
+<option value='1' selected="selected">Русский (RU)</option>
+						</select>
+						<input type='submit' class='input_submit alt' value='ОК' id='newLangSubmit' />
+					</fieldset>
+				</form>
+				<h2 class='hide'>Статистика работы системы</h2>
+				<ul class='right'>
+					<li>Сейчас: 04 фев 2018 17:58
+						
+					</li>
+					
+				</ul>
+			</div>
+			<!-- __FOOTER__ -->
+			<!-- /__FOOTER__ -->
+			
+			<div id='board_footer'>
+				<ul id='utility_links' class='left'>
+					<li><a href='#top' title='Наверх'>Наверх</a></li>
+					<li><a href='http://zooforum.ru/index.php?' title='К списку форумов'>К списку форумов</a></li>
+					<li><a href="http://zooforum.ru/index.php?app=core&amp;module=global&amp;section=login&amp;&amp;do=deleteCookies&amp;k=880ea6a14ea49e853634fbdc5015a024" title='Очистить cookies установленные системой'>Очистить cookies</a></li>
+					<li><a href="http://zooforum.ru/index.php?app=forums&amp;module=forums&amp;section=markasread&amp;marktype=all&amp;k=880ea6a14ea49e853634fbdc5015a024" title='Отметить все как прочтенное'>Отметить все сообщения прочитанными</a></li>
+				</ul>
+				<br />Зарегистрирован на: VETDOCTOR</p>
+		<!-- / Copyright -->
+			</div>
+			
+			
+		</div>
+	</body>
+</html>

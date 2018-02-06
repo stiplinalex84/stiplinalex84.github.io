@@ -1,0 +1,278 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+	<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title>Сообщение</title>
+		<link rel="shortcut icon" href='http://zooforum.ru/favicon.ico' />
+		<script type='text/javascript'>
+			jsDebug = 0; /* Must come before JS includes */
+			USE_RTE = 0;
+			inACP   = false;
+		</script>
+		
+	
+				
+	
+
+				
+	
+
+				
+	
+
+				
+			<link rel="stylesheet" type="text/css" media="print" href="http://zooforum.ru/public/style_css/css_1/ipb_print.css" />
+		
+	
+
+				
+	
+
+				
+	
+
+				
+	
+	
+		<link rel="stylesheet" type="text/css" media='screen' href="http://zooforum.ru/public/min/index.php?f=public/style_css/css_1/calendar_select.css,public/style_css/css_1/ipb_editor.css,public/style_css/css_1/ipb_login_register.css,public/style_css/css_1/ipb_styles.css,public/style_css/css_1/ipb_ucp.css,public/style_css/css_1/ipb_search.css" />
+	
+
+<!--[if lte IE 7]>
+	<link rel="stylesheet" type="text/css" title='Main' media="screen" href="http://zooforum.ru/public/style_css/css_1/ipb_ie.css" />
+<![endif]-->
+		<!--<meta http-equiv="X-UA-Compatible" content="IE=7" />-->
+		
+	
+	<meta name="identifier-url" content="http://zooforum.ru/index.php?app=core&amp;module=attach&amp;section=attach&amp;attach_id=38302" />
+	
+
+		<script type='text/javascript' src='http://zooforum.ru/public/min/index.php?g=js'></script>
+	
+	<script type='text/javascript' src='http://zooforum.ru/public/min/index.php?charset=utf-8&amp;f=public/js/ipb.js,public/js/ips.quickpm.js,cache/lang_cache/1/ipb.lang.js' charset='utf-8'></script>
+	
+
+<script type='text/javascript'>
+	var isRTL	= false;
+	var rtlIe	= '';
+	var rtlFull	= '';
+</script>
+
+		
+		<script type='text/javascript'>
+	//<![CDATA[
+		/* ---- URLs ---- */
+		ipb.vars['base_url'] 			= 'http://zooforum.ru/index.php?';
+		ipb.vars['board_url']			= 'http://zooforum.ru';
+		ipb.vars['loading_img'] 		= 'http://zooforum.ru/public/style_images/master/loading.gif';
+		ipb.vars['active_app']			= 'core';
+		ipb.vars['upload_url']			= 'http://zooforum.ru/uploads/';
+		/* ---- Member ---- */
+		ipb.vars['member_id']			= parseInt( 0 ),
+		ipb.vars['is_supmod']			= parseInt( 0 ),
+		ipb.vars['is_admin']			= parseInt( 0 ),
+		ipb.vars['secure_hash'] 		= '880ea6a14ea49e853634fbdc5015a024';
+		ipb.vars['session_id']			= '1f238bd90897943af9705868bca0995f';
+		ipb.vars['can_befriend']		= true;
+		/* ---- cookies ----- */
+		ipb.vars['cookie_id'] 			= '';
+		ipb.vars['cookie_domain'] 		= '';
+		ipb.vars['cookie_path']			= '';
+		/* ---- Rate imgs ---- */
+		ipb.vars['rate_img_on']			= 'http://zooforum.ru/public/style_images/master/bullet_star.png';
+		ipb.vars['rate_img_off']		= 'http://zooforum.ru/public/style_images/master/bullet_star_off.png';
+		ipb.vars['rate_img_rated']		= 'http://zooforum.ru/public/style_images/master/bullet_star_rated.png';
+		/* ---- Uploads ---- */
+		ipb.vars['swfupload_swf']		= 'http://zooforum.ru/public/js/3rd_party/swfupload/swfupload.swf';
+		ipb.vars['swfupload_enabled']	= true;
+		ipb.vars['use_swf_upload']		= ( '' == 'flash' ) ? true : false;
+		ipb.vars['swfupload_debug']		= false; /* SKINNOTE: Turn off for production */
+		/* ---- other ---- */
+		ipb.vars['use_live_search'] 	= 0;
+		ipb.vars['live_search_limit'] 	= 4;
+		ipb.vars['highlight_color']		= "#ade57a";
+		ipb.vars['charset']				= "utf-8";
+		ipb.vars['use_rte']				= 1;
+		ipb.vars['image_resize']		= 50;
+		ipb.vars['seo_enabled']			= 0;
+		
+		/* Templates/Language */
+		ipb.templates['ajax_loading'] 	= "<div id='ajax_loading'>" + ipb.lang['loading'] + "</div>";
+		ipb.templates['close_popup']	= "<img src='http://zooforum.ru/public/style_images/master/close_popup.png' alt='x' />";
+		ipb.templates['rss_shell']		= new Template("<ul id='rss_menu'>#{items}</ul>");
+		ipb.templates['rss_item']		= new Template("<li><a href='#{url}' title='#{title}'>#{title}</a></li>");
+		ipb.templates['resized_img']	= new Template("<span>Уменьшено на #{percent}% (#{width} x #{height}) - Нажмите для увеличения</span>");
+		ipb.templates['m_add_friend']	= new Template("<a href='http://zooforum.ru/index.php?app=members&amp;module=profile&amp;section=friends&amp;do=add&amp;member_id=#{id}' title='Добавить в друзья'><img src='http://zooforum.ru/public/style_images/master/user_add.png' alt='Добавить в друзья' /></a>");
+		ipb.templates['m_rem_friend']	= new Template("<a href='http://zooforum.ru/index.php?app=members&amp;module=profile&amp;section=friends&amp;do=remove&amp;member_id=#{id}' title='Удалить из друзей'><img src='http://zooforum.ru/public/style_images/master/user_delete.png' alt='Удалить из друзей' /></a>");
+		ipb.templates['autocomplete_wrap'] = new Template("<ul id='#{id}' class='ipb_autocomplete' style='width: 250px;'></ul>");
+		ipb.templates['autocomplete_item'] = new Template("<li id='#{id}'><img src='#{img}' alt='' width='#{img_w}' height='#{img_h}' />&nbsp;&nbsp;#{itemvalue}</li>");
+		ipb.templates['page_jump']		= new Template("<div id='#{id}_wrap' class='ipbmenu_content'><h3 class='bar'>Перейти к странице</h3><input type='text' class='input_text' id='#{id}_input' size='8' /> <input type='submit' value='ОК' class='input_submit add_folder' id='#{id}_submit' /></div>");
+	//]]>
+	</script>
+		<script type='text/javascript'>
+			Loader.boot();
+		</script>
+	</head>
+	<body id='ipboard_body'>
+		<div id='ipbwrapper'>
+			<h1>ZooForum: Сообщение</h1>
+			<p id='content_jump'><a id='top'></a><a href='#j_content' title='Перейти к содержимому' accesskey='m'>Перейти к содержимому</a></p>
+		
+			
+			<div id='header'>
+				<div id='branding'>
+					
+						<a href='http://zooforum.ru/index.php?' title='Перейти к списку форумов' rel="home" accesskey='1'><img src='http://zooforum.ru/public/style_images/leto2016.gif' alt='Логотип' /></a>
+					
+				</div>
+						
+				
+					<div id='user_navigation' class='not_logged_in'>
+						<a href='http://zooforum.ru/index.php?app=core&amp;module=global&amp;section=login' title='Вход'><img src='http://zooforum.ru/public/style_images/master/key.png' alt='Иконка входа' /> Вход</a>
+						<a href="http://zooforum.ru/index.php?app=core&amp;module=global&amp;section=register" title='Регистрация'><img src='http://zooforum.ru/public/style_images/master/paste_plain.png' alt='Регистрация' /> Регистрация</a>
+						<a href="http://zooforum.ru/index.php?app=core&amp;module=help" title='Перейти к помощи' rel="help" accesskey='6'><img src='http://zooforum.ru/public/style_images/master/help.png' alt='Помощь' /> Помощь</a>
+					</div>
+				
+				
+			
+				<div id='primary_nav'>
+					<div id='search'>
+						<form action="http://zooforum.ru/index.php?app=core&amp;module=search&amp;do=quick_search&amp;search_filter_app[core]=1" method="post" id='search-box' >
+							<fieldset>
+							
+								<label for='main_search' class='hide'>Поиск</label>
+								<input type='text' id='main_search' name='search_term' class='text_input' size='17' tabindex='6' />
+								<input type='submit' class='submit_input' value='Поиск' />
+								<a href='http://zooforum.ru/index.php?app=core&amp;module=search' title='' accesskey='4' rel="search" id='adv_search'>Расширенный</a>
+							</fieldset>
+						</form>
+					</div>
+					<ul>
+						
+							<li id='nav_home' class='left'><a href='http://zooforum.ru' title='Перейти на сайт' rel="home">Форум о животных</a></li>
+						
+																								<li id='nav_discussion' class='left '><a href='http://zooforum.ru/index.php?act=idx' title='Перейти к списку форумов'>Обсуждения</a></li><li id='nav_members' class='left '><a href='http://zooforum.ru/index.php?app=members&amp;section=view&amp;module=list' title='Перейти к списку пользователей'>Пользователи</a></li>
+						
+							
+								
+							
+
+								
+							
+
+								
+							
+						
+					</ul>
+				</div>
+				
+			
+				<div id='secondary_nav'>
+					<ul id='breadcrumb' class='left'>
+												<li class='first'><a href='http://zooforum.ru/index.php?act=idx'>ZooForum</a></li>
+							
+											</ul>
+					<ul id='section_links' class='right'>
+						
+						<li><a href='http://zooforum.ru/index.php?app=core&amp;module=search&amp;do=new_posts&amp;search_filter_app[forums]=1' accesskey='2'>Просмотр новых публикаций</a></li>
+						<li><img src='http://zooforum.ru/public/style_images/master/feed.png' alt='RSS поток' id='rss_feed' class='clickable' /></li>
+					</ul>
+				</div>
+			</div>
+			<div id='content' class='clear'>
+				<a id='j_content'></a>
+				<script type="text/javascript">
+<!--
+function contact_admin() {
+  // Very basic spam bot stopper
+  admin_email_one = 'admin';
+  admin_email_two = 'vetdoctor.ru';
+  window.location = 'mailto:'+admin_email_one+'@'+admin_email_two+'?subject=Ошибка на форуме';  
+}
+//-->
+</script>
+<h2>Ошибка</h2>
+
+	<p>Возникла ошибка. Если вы не уверены, что правильно используете функцию, советуем вам обратиться к нашей системе помощи за дополнительной информацией.</p>
+	<br />
+
+<div class='message error'>
+	 [#10171] У вас не достаточно прав для загрузки данного прикрепленного файла.
+</div>
+<br />
+<div class='general_box alt'>
+	<h3>Вы не вошли</h3>
+	<p class='field'><img src='http://zooforum.ru/public/style_images/master/key.png' alt='Иконка входа' /> <a href='http://zooforum.ru/index.php?app=core&amp;module=global&amp;section=login' title='Войти'>Войти</a>.</p>
+</div>
+<br />
+
+<div class='general_box alt'>	
+	<h3>Полезные ссылки</h3>
+	<br />
+	<ul class='bullets'>
+		<li><a href="http://zooforum.ru/index.php?app=core&amp;module=global&amp;section=lostpass&amp;do=10" title='Восстановление пароля'>Восстановление пароля</a></li>
+		<li><a href="http://zooforum.ru/index.php?app=core&amp;module=global&amp;section=register&amp;do=00" title='Регистрация'>Регистрация</a></li>
+		<li><a href="http://zooforum.ru/index.php?app=core&module=help" rel="help" title='Разделы помощи'>Разделы помощи</a></li>
+		<li><a href="javascript:contact_admin();" title='Связь с администрацией форума'>Связь с администрацией форума</a></li>
+	</ul>
+	<br />
+	<p class="submit">
+		<strong><a href="javascript:history.go(-1)">Назад</a></strong>
+	</p>
+</div>
+				<br class='clear' />
+			</div>
+			<div id='footer_utilities' class='clearfix clear rounded'>
+				<h2 class='hide'>Внешний вид</h2>
+				
+						<form action="http://zooforum.ru/index.php?app=core&amp;module=attach&amp;section=attach&amp;attach_id=38302" method="post" class='left'>
+							<fieldset>
+								<input type='hidden' name='k' value='880ea6a14ea49e853634fbdc5015a024' />
+								<label for='newSkin' class='hide'>Стиль:</label>
+								<select name="settingNewSkin" id='newSkin'>
+									
+<option id='skinSetDD_1' selected="selected" value="1">IP.Board</option>
+<option id='skinSetDD_3'  value="3">IP.Board Lo-Fi</option>
+								</select>
+								<input type='submit' value='ОК' class='input_submit alt' id='newSkinSubmit' />
+							</fieldset>
+						</form>
+					
+				<form action="http://zooforum.ru/index.php?app=core&amp;module=attach&amp;section=attach&amp;attach_id=38302" method="post" class='left'>
+					<fieldset>
+						<input type='hidden' name='k' value='880ea6a14ea49e853634fbdc5015a024' />
+						<input type='hidden' name='setlanguage' value='1' />
+						<input type="hidden" name="langurlbits" value="app=core&amp;module=attach&amp;section=attach&amp;attach_id=38302&amp;cal_id=" />
+						<label for='newLang' class='hide'>Язык:</label>
+						<select name="langid" id='newLang'>
+								
+<option value='1' selected="selected">Русский (RU)</option>
+						</select>
+						<input type='submit' class='input_submit alt' value='ОК' id='newLangSubmit' />
+					</fieldset>
+				</form>
+				<h2 class='hide'>Статистика работы системы</h2>
+				<ul class='right'>
+					<li>Сейчас: 04 фев 2018 19:06
+						
+					</li>
+					
+				</ul>
+			</div>
+			<!-- __FOOTER__ -->
+			<!-- /__FOOTER__ -->
+			
+			<div id='board_footer'>
+				<ul id='utility_links' class='left'>
+					<li><a href='#top' title='Наверх'>Наверх</a></li>
+					<li><a href='http://zooforum.ru/index.php?' title='К списку форумов'>К списку форумов</a></li>
+					<li><a href="http://zooforum.ru/index.php?app=core&amp;module=global&amp;section=login&amp;&amp;do=deleteCookies&amp;k=880ea6a14ea49e853634fbdc5015a024" title='Очистить cookies установленные системой'>Очистить cookies</a></li>
+					<li><a href="http://zooforum.ru/index.php?app=forums&amp;module=forums&amp;section=markasread&amp;marktype=all&amp;k=880ea6a14ea49e853634fbdc5015a024" title='Отметить все как прочтенное'>Отметить все сообщения прочитанными</a></li>
+				</ul>
+				<br />Зарегистрирован на: VETDOCTOR</p>
+		<!-- / Copyright -->
+			</div>
+			
+			
+		</div>
+	</body>
+</html>
